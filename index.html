@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Home Inspection Software — Booking, Reports & Pay | VLX Home</title>
-<meta name="description" content="Home inspection software that turns your website into a 24/7 booking engine — scheduling, agreements, payments, AI reports and follow-up in one platform. Book a demo." />
+<!-- Canonical target route (production): /digital-inspections-software/app/vlx-home/ -->
+<title>Home Inspection Business Software | VLX Home</title>
+<meta name="description" content="Scheduling, offline inspections, branded reports, signature and invoicing in one service. VLX Home runs the whole residential inspection job." />
 <meta name="robots" content="noindex, nofollow" />
-<meta property="og:title" content="Home Inspection Software — Booking, Reports & Pay | VLX Home" />
-<meta property="og:description" content="Home inspection software that runs your whole business: online booking, scheduling, dispatch, state-compliant reports and payments in one platform." />
+<meta property="og:title" content="Home Inspection Business Software | VLX Home" />
+<meta property="og:description" content="VLX Home is home inspection business software that runs the whole residential job — scheduling, offline inspection app, branded reports, signature and invoicing." />
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --brand:#FF5722; --brand-dark:#E64A19; --brand-darker:#C63A0A; --brand-light:#FF8A65;
+    --brand:#FF5722; --brand-dark:#E64A19; --brand-darker:#C63A0A; --brand-light:#FF8A65; --brand-soft:#FFF1EC;
     --text:#263238; --text-2:#546E7A; --text-3:#64757F;
     --surface:#FFFFFF; --muted:#F8FAFC; --dark:#1E293B; --darker:#0F172A;
     --line:#E6EBEF; --radius:16px; --maxw:1160px;
@@ -24,413 +25,343 @@
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;font-family:'Rubik',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);background:var(--surface);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:17px}
-  a{color:inherit;text-decoration:none}
+  a{color:var(--brand-darker)}
   img{max-width:100%}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
   .eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--brand-darker)}
-  h1,h2,h3{margin:0;color:var(--text);line-height:1.15;font-weight:700}
-  h2{font-size:clamp(26px,3.4vw,36px);letter-spacing:-.01em}
-  h3{font-size:20px;font-weight:600;line-height:1.3}
+  h1,h2,h3{margin:0;color:var(--text);line-height:1.16;font-weight:700}
+  h2{font-size:clamp(25px,3.3vw,35px);letter-spacing:-.01em}
+  h3{font-size:19px;font-weight:600;line-height:1.3}
   p{margin:0}
   .accent{color:var(--brand)}
-  .section{padding:84px 0}
+  .section{padding:80px 0}
   .section .lead{color:var(--text-2);font-size:18px;max-width:720px;margin-top:14px}
   .center{text-align:center;margin-left:auto;margin-right:auto}
-  /* buttons */
-  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;padding:13px 22px;border-radius:12px;border:1.5px solid transparent;cursor:pointer;transition:.18s ease;white-space:nowrap}
-  .btn-primary{background:var(--brand);color:#fff;box-shadow:0 6px 16px rgba(255,87,34,.28)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;padding:13px 22px;border-radius:12px;border:1.5px solid transparent;cursor:pointer;transition:.18s ease;white-space:nowrap;text-decoration:none}
+  .btn-primary{background:var(--brand);color:#fff!important;box-shadow:0 6px 16px rgba(255,87,34,.28)}
   .btn-primary:hover{background:var(--brand-dark);transform:translateY(-1px)}
-  .btn-ghost{background:#fff;color:var(--text);border-color:var(--line)}
-  .btn-ghost:hover{border-color:var(--brand);color:var(--brand-darker)}
-  .btn-light{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.22)}
+  .btn-ghost{background:#fff;color:var(--text)!important;border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--brand);color:var(--brand-darker)!important}
+  .btn-light{background:rgba(255,255,255,.08);color:#fff!important;border-color:rgba(255,255,255,.24)}
   .btn-light:hover{background:rgba(255,255,255,.16)}
-  /* header */
   header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;letter-spacing:-.01em}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;letter-spacing:-.01em;color:var(--text);text-decoration:none}
   .brand .dot{width:26px;height:26px;border-radius:7px;background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:700}
   .brand small{color:var(--text-3);font-weight:500;font-size:12px;margin-left:2px}
-  .nav-links{display:flex;gap:26px;align-items:center}
-  .nav-links a{font-size:15px;color:var(--text-2);font-weight:500}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{font-size:15px;color:var(--text-2);font-weight:500;text-decoration:none}
   .nav-links a:hover{color:var(--brand-darker)}
   .nav-cta{display:flex;gap:10px;align-items:center}
-  /* hero */
-  .hero{padding:74px 0 40px;background:radial-gradient(1200px 480px at 70% -10%,rgba(255,138,101,.16),transparent 60%),linear-gradient(180deg,#fff, #fff)}
-  .hero h1{font-size:clamp(34px,5.2vw,54px);letter-spacing:-.02em;margin:16px 0 0}
-  .hero .sub{color:var(--text-2);font-size:19px;max-width:640px;margin:20px 0 0}
-  .hero-cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
-  .hero-trust{margin-top:20px;color:var(--text-3);font-size:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-  .hero-trust b{color:var(--text-2);font-weight:600}
-  .pill{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:13px;color:var(--text-2);font-weight:500;box-shadow:var(--shadow)}
-  /* golden path */
-  .path{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:44px}
-  .path .step{background:var(--muted);border:1px solid var(--line);border-radius:14px;padding:16px 14px;text-align:center}
-  .path .step .n{width:30px;height:30px;border-radius:9px;background:#fff;border:1px solid var(--line);color:var(--brand);font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:8px}
-  .path .step b{display:block;font-size:14px;color:var(--text)}
-  .path .step span{font-size:12.5px;color:var(--text-3)}
-  /* comparison */
-  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
-  .cmp .col{border-radius:var(--radius);padding:26px;border:1px solid var(--line)}
-  .cmp .old{background:#FDECEA}
-  .cmp .new{background:#E8F5E9}
-  .cmp .col h3{font-size:16px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
-  .cmp ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
-  .cmp li{display:flex;gap:10px;font-size:15.5px;color:var(--text)}
-  .cmp .ic{flex:0 0 20px;height:20px;margin-top:2px}
-  .cmp .old .ic{color:#C0392B}.cmp .new .ic{color:#2E7D32}
-  /* grids */
-  .grid{display:grid;gap:20px}
-  .g2{grid-template-columns:1fr 1fr}
-  .g3{grid-template-columns:repeat(3,1fr)}
-  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:.2s}
+  /* S1 hero */
+  .hero{padding:64px 0 44px;background:radial-gradient(1200px 480px at 72% -10%,rgba(255,138,101,.18),transparent 60%)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+  .hero h1{font-size:clamp(31px,4.4vw,46px);letter-spacing:-.02em;margin:14px 0 0}
+  .hero .sub{color:var(--text-2);font-size:18px;max-width:560px;margin:18px 0 0}
+  .hero .subkw{margin-top:14px;font-size:14.5px;color:var(--text-3)}
+  .hero .subkw b{color:var(--text-2);font-weight:600}
+  .hero-cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+  .trust-inline{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:12.5px;color:var(--text-2);font-weight:500;box-shadow:var(--shadow)}
+  /* report visual */
+  .report{transform:rotate(2deg);filter:drop-shadow(0 30px 50px rgba(38,50,56,.18));border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
+  .report .rhead{background:var(--brand);color:#fff;padding:16px 18px;display:flex;justify-content:space-between;align-items:center}
+  .report .rhead b{font-size:15px}.report .rhead span{font-size:11px;opacity:.9}
+  .report .rbody{padding:18px}
+  .report .rrow{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+  .report .rrow b{color:var(--text)}
+  .report .rflag{background:#FDECEA;color:#C0392B;border-radius:8px;padding:8px 10px;font-size:12.5px;margin-top:12px;display:flex;gap:8px;align-items:center}
+  .report .rphoto{height:78px;border-radius:8px;background:linear-gradient(135deg,#E3ECF2,#CFE0EA);margin-top:12px;display:flex;align-items:center;justify-content:center;color:var(--text-3);font-size:11px}
+  /* S2 proof */
+  .proof{background:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .proof .row{display:flex;align-items:center;gap:30px;flex-wrap:wrap;justify-content:space-between;padding:22px 0}
+  .proof .logos{display:flex;gap:26px;flex-wrap:wrap;align-items:center;opacity:.7}
+  .proof .logos .lg{width:96px;height:26px;background:#CBD5E1;border-radius:6px}
+  .proof .stat b{font-size:22px;color:var(--text)}.proof .stat span{color:var(--text-3);font-size:14px;margin-left:6px}
+  /* generic */
+  .grid{display:grid;gap:20px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);transition:.2s}
   .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
-  .card .ico{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,#FFF1EC,#FFE0D6);color:var(--brand-darker);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-  .card h3{margin-bottom:8px}
-  .card p{color:var(--text-2);font-size:15px}
-  /* feature blocks */
-  .feat{border:1px solid var(--line);border-radius:var(--radius);padding:30px;background:#fff;box-shadow:var(--shadow)}
-  .feat .kicker{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-darker)}
-  .feat h3{font-size:23px;font-weight:700;margin:8px 0 10px}
-  .feat .flead{color:var(--text-2);font-size:16px;margin-bottom:18px}
-  .feat .mech{display:grid;gap:12px}
-  .feat .mech .m{padding:14px 16px;background:var(--muted);border-radius:12px;border:1px solid var(--line)}
-  .feat .mech .m b{display:block;font-size:14.5px;margin-bottom:3px}
-  .feat .mech .m span{font-size:14px;color:var(--text-2)}
-  /* how it works */
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:38px}
-  .steps .s{position:relative;padding-top:8px}
-  .steps .s .num{width:42px;height:42px;border-radius:12px;background:var(--brand);color:#fff;font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-  .steps .s h3{font-size:18px;margin-bottom:6px}
-  .steps .s p{color:var(--text-2);font-size:14.5px}
-  /* dark AI section */
+  .card .ico{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#FFF1EC,#FFE0D6);color:var(--brand-darker);display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:19px}
+  .card h3{margin-bottom:7px}.card p{color:var(--text-2);font-size:14.5px}
+  /* S4 job track */
+  .track-wrap{margin-top:34px}
+  .track{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 16px;scroll-snap-type:x mandatory;cursor:grab}
+  .track.drag{cursor:grabbing}
+  .jstep{scroll-snap-align:start;flex:0 0 260px;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:20px;transition:.2s;user-select:none}
+  .jstep.active{border-color:var(--brand);box-shadow:0 10px 26px rgba(255,87,34,.16)}
+  .jstep .jn{width:34px;height:34px;border-radius:10px;background:var(--brand-soft);color:var(--brand-darker);font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .jstep.active .jn{background:var(--brand);color:#fff}
+  .jstep h3{font-size:16px;margin-bottom:6px}.jstep p{font-size:13.5px;color:var(--text-2)}
+  .track-ctl{display:flex;gap:10px;margin-top:6px;align-items:center}
+  .track-ctl button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 14px;font-weight:600;font-size:13.5px;color:var(--text);cursor:pointer;font-family:inherit}
+  .track-ctl button:hover{border-color:var(--brand);color:var(--brand-darker)}
+  .track-hint{font-size:12px;color:var(--text-3);margin-left:auto}
+  /* S5 wipe */
+  .wipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:30px}
+  .wipe{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow);aspect-ratio:4/3}
+  .wipe .pane{position:absolute;inset:0;padding:22px}
+  .wipe .after{background:linear-gradient(135deg,#fff,#FFF7F4)}
+  .wipe .before{background:#F1F5F8;clip-path:inset(0 0 0 var(--wipe,54%))}
+  .wipe .tg{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:4px 9px;border-radius:6px;margin-bottom:12px}
+  .wipe .after .tg{background:var(--brand-soft);color:var(--brand-darker)}
+  .wipe .before .tg{background:#E2E8F0;color:var(--text-2)}
+  .wipe .ttl{font-weight:700;font-size:15px}
+  .wipe .ln{height:9px;border-radius:5px;background:#E7EDF1;margin-top:9px}
+  .wipe .ln.hot{background:var(--brand-soft);border:1px solid var(--brand-light);height:26px}
+  .wipe .meta{font-size:11px;color:var(--text-3);margin-top:12px;font-family:ui-monospace,monospace}
+  .wipe .divider{position:absolute;top:0;bottom:0;left:var(--wipe,54%);width:2px;background:var(--brand);transform:translateX(-1px)}
+  .wipe-range{width:100%;margin-top:14px;accent-color:var(--brand)}
+  /* S6 dark KPIs */
   .dark{background:radial-gradient(900px 400px at 80% -20%,rgba(255,87,34,.22),transparent 60%),var(--darker);color:#fff}
-  .dark h2{color:#fff}.dark .lead{color:#B6C2CC}
-  .dark .card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);box-shadow:none}
-  .dark .card h3{color:#fff}.dark .card p{color:#B6C2CC}
-  .dark .ico{background:rgba(255,87,34,.16);color:var(--brand-light)}
-  /* switch / compare */
-  .compare-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-  .compare-links a{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-weight:600;font-size:14.5px;color:var(--text);box-shadow:var(--shadow);transition:.18s}
-  .compare-links a:hover{border-color:var(--brand);color:var(--brand-darker);transform:translateY(-1px)}
-  .compare-links a .soon{font-size:11px;color:var(--text-3);font-weight:500}
-  /* integrations */
-  .integ{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
-  .integ .i{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow)}
-  .integ .i b{display:block;margin-bottom:6px;font-size:15.5px}
-  .integ .i span{font-size:13.5px;color:var(--text-2)}
-  /* pricing teaser */
-  .price{background:linear-gradient(135deg,#FFF7F4,#FFEDE6);border:1px solid #FFD9CC;border-radius:22px;padding:44px;text-align:center}
-  .price h2{margin-bottom:10px}.price p{color:var(--text-2);max-width:560px;margin:0 auto 22px}
-  /* faq */
-  .faq{max-width:820px;margin:34px auto 0}
+  .dark h2{color:#fff}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:34px}
+  .kpi{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:24px;text-align:center}
+  .kpi .v{font-size:34px;font-weight:700;color:var(--brand-light);display:block;line-height:1}
+  .kpi .l{font-size:13.5px;color:#B6C2CC;margin-top:8px;display:block}
+  .dark .supp{color:#8FA0AC;font-size:13.5px;margin-top:22px;text-align:center}
+  /* S7 pricing */
+  .price-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;margin-top:30px}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .chip{background:var(--brand-soft);color:var(--brand-darker);border-radius:999px;padding:6px 13px;font-size:13px;font-weight:600}
+  .plan{background:#fff;border:1.5px solid var(--brand);border-radius:18px;padding:28px;box-shadow:var(--shadow-lg);text-align:center}
+  .plan .pl{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--brand-darker)}
+  .plan .pv{font-size:34px;font-weight:700;margin:6px 0 4px}
+  .plan .pv small{font-size:15px;color:var(--text-3);font-weight:500}
+  .plan .pdesc{color:var(--text-2);font-size:14px;margin-bottom:16px}
+  /* S8 faq */
+  .faq{max-width:860px;margin:30px auto 0}
   .qa{border:1px solid var(--line);border-radius:14px;background:#fff;margin-bottom:12px;overflow:hidden}
-  .qa summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:600;font-size:16.5px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .qa summary{list-style:none;cursor:pointer;padding:17px 22px;font-weight:600;font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:16px}
   .qa summary::-webkit-details-marker{display:none}
-  .qa summary .plus{flex:0 0 22px;height:22px;position:relative;transition:.2s}
+  .qa summary .plus{flex:0 0 22px;height:22px;position:relative}
   .qa summary .plus::before,.qa summary .plus::after{content:"";position:absolute;background:var(--brand);border-radius:2px;left:50%;top:50%;transform:translate(-50%,-50%)}
   .qa summary .plus::before{width:14px;height:2px}.qa summary .plus::after{width:2px;height:14px;transition:.2s}
   .qa[open] summary .plus::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
-  .qa .a{padding:0 22px 20px;color:var(--text-2);font-size:15.5px}
-  /* final cta */
-  .final{background:linear-gradient(135deg,var(--brand),#FF7043);color:#fff;border-radius:24px;padding:56px 40px;text-align:center}
-  .final h2{color:#fff;font-size:clamp(26px,3.6vw,38px)}
-  .final p{color:rgba(255,255,255,.92);max-width:560px;margin:14px auto 26px;font-size:18px}
-  .final .btn-primary{background:#fff;color:var(--brand-darker);box-shadow:0 8px 20px rgba(0,0,0,.18)}
-  .final .btn-primary:hover{background:#fff;transform:translateY(-1px)}
-  .final small{display:block;margin-top:20px;color:rgba(255,255,255,.85);font-size:13.5px}
+  .qa .a{padding:0 22px 18px;color:var(--text-2);font-size:15px}
+  /* S9 final */
+  .final{background:linear-gradient(135deg,var(--brand),#FF7043);color:#fff;text-align:center;padding:66px 24px}
+  .final h2{color:#fff}.final p{color:rgba(255,255,255,.9);max-width:520px;margin:12px auto 24px}
+  .final .btn-primary{background:#fff;color:var(--brand-darker)!important}
   /* footer */
-  footer{background:var(--darker);color:#9FB0BC;padding:46px 0 30px;font-size:14px}
-  footer .cols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
-  footer .brand{color:#fff}
-  footer .note{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:#6B7C88}
+  footer{background:var(--darker);color:#9FB0BC;padding:44px 0 28px;font-size:14px}
+  footer a{color:#CBD5E1;text-decoration:none}footer a:hover{color:#fff}
+  footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px}
+  footer .cols b{color:#fff;display:block;margin-bottom:10px;font-size:13px}
+  footer .cols a{display:block;margin-bottom:7px}
+  footer .note{margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:#6B7C88}
   .demo-banner{background:var(--dark);color:#CBD5E1;font-size:12.5px;text-align:center;padding:7px 12px}
   .demo-banner b{color:#fff}
+  .reveal{opacity:0;transform:translateY(14px);transition:.6s ease}.reveal.in{opacity:1;transform:none}
   @media(max-width:900px){
     .nav-links{display:none}
-    .path{grid-template-columns:1fr 1fr}
-    .cmp,.g2,.g3,.steps,.integ{grid-template-columns:1fr}
-    .section{padding:60px 0}
+    .hero-grid,.wipe-grid,.price-grid{grid-template-columns:1fr}
+    .g2,.g3,.g4,.kpis{grid-template-columns:1fr 1fr}
+    .section{padding:56px 0}.report{transform:none;margin-top:24px}
+    footer .cols{grid-template-columns:1fr 1fr}
   }
-  @media(max-width:560px){ .path{grid-template-columns:1fr} .hero-cta .btn{flex:1} }
-  .reveal{opacity:0;transform:translateY(14px);transition:.6s ease}
-  .reveal.in{opacity:1;transform:none}
+  @media(max-width:560px){.g2,.g3,.g4,.kpis{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<div class="demo-banner">Preview / test build — <b>VLX Home</b> content proposal. Not the live site. <b>noindex</b>.</div>
+<div class="demo-banner">Preview / test build — <b>VLX Home</b> service page (wireframe v3). Route: <b>/digital-inspections-software/app/vlx-home/</b> · noindex.</div>
 
 <header>
   <div class="wrap nav">
-    <div class="brand"><span class="dot">V</span> VLX Home <small>by Visualogyx</small></div>
+    <a class="brand" href="#"><span class="dot">V</span> VLX Home <small>by Visualogyx</small></a>
     <nav class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#ai">AI</a>
-      <a href="#compare">Compare</a>
+      <a href="#included">Features</a>
+      <a href="#job">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-ghost" href="#demo">See it live</a>
-      <a class="btn btn-primary" href="#demo">Book a demo</a>
+      <a class="btn btn-ghost" href="#demo">Book a Demo</a>
+      <a class="btn btn-primary" href="#demo">Start Free Trial</a>
     </div>
   </div>
 </header>
 
-<!-- HERO -->
+<!-- S1 · HERO (LCP · priority image) -->
 <section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Home Inspection Software for Inspectors</div>
-    <h1>Home Inspection Software That <span class="accent">Runs Your Whole Business</span></h1>
-    <p class="sub">Get booked. Get paid. Get your evenings back. VLX Home turns your website into a 24/7 booking engine — then runs the agreements, payments, AI reporting, and follow-up around every job you take.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="#demo">Book a demo</a>
-      <a class="btn btn-ghost" href="#demo">See it live</a>
-    </div>
-    <div class="hero-trust">
-      <span class="pill">🛡️ 50-state compliance</span>
-      <span class="pill">🔒 Bank-grade encryption</span>
-      <span class="pill">⚡ From the team behind VLX</span>
-    </div>
-
-    <div class="path reveal">
-      <div class="step"><div class="n">1</div><b>Get booked</b><span>Your website + booking page</span></div>
-      <div class="step"><div class="n">2</div><b>Signed &amp; paid</b><span>E-sign + Stripe</span></div>
-      <div class="step"><div class="n">3</div><b>Inspect</b><span>VLX field app</span></div>
-      <div class="step"><div class="n">4</div><b>Deliver</b><span>Client report portal</span></div>
-      <div class="step"><div class="n">5</div><b>Reviewed</b><span>Verified reviews</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARISON -->
-<section class="section">
-  <div class="wrap">
-    <div class="eyebrow">The Old Way vs. The VLX Home Way</div>
-    <h2 style="margin-top:8px">One platform instead of five that never talk</h2>
-    <p class="lead">Stop stitching together a scheduler, a report tool, a payment app, and a spreadsheet.</p>
-    <div class="cmp">
-      <div class="col old reveal">
-        <h3>Without VLX Home</h3>
-        <ul>
-          <li><span class="ic">✕</span>Clients call and text to book — you answer the phone instead of inspecting</li>
-          <li><span class="ic">✕</span>Five disconnected tools that never talk to each other</li>
-          <li><span class="ic">✕</span>Chasing signatures and invoices after the job</li>
-          <li><span class="ic">✕</span>Reports written back at the office, delivered days later</li>
-          <li><span class="ic">✕</span>Manual follow-ups for reviews — most never go out</li>
-          <li><span class="ic">✕</span>No single view of what actually makes you money</li>
-        </ul>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">New service · VLX Home</div>
+      <h1>VLX Home: home inspection business software, <span class="accent">from booking to payment</span></h1>
+      <p class="sub">VLX Home is the home inspection business software that runs the whole residential job — schedule the appointment, inspect offline in the field, deliver a branded report, collect the signature and get paid, all in one place.</p>
+      <p class="subkw"><b>Also covers:</b> inspection scheduling software · offline inspection app · branded inspection report · get paid faster</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#demo">Start Free Trial</a>
+        <a class="btn btn-ghost" href="#demo">Book a Demo</a>
       </div>
-      <div class="col new reveal">
-        <h3>With VLX Home</h3>
-        <ul>
-          <li><span class="ic">✓</span>A booking page on your own site takes jobs 24/7 — agreement signed, deposit paid</li>
-          <li><span class="ic">✓</span>Booking, scheduling, reports, invoicing and CRM in one login</li>
-          <li><span class="ic">✓</span>Agreements e-signed and payment collected before the inspection</li>
-          <li><span class="ic">✓</span>AI-assisted reports delivered to a client portal, often same day</li>
-          <li><span class="ic">✓</span>Review requests and re-engagement go out automatically</li>
-          <li><span class="ic">✓</span>Revenue, conversion and per-inspector production in one analytics view</li>
-        </ul>
+      <div class="trust-inline">
+        <span class="pill">🛡️ 50-state compliant reports</span>
+        <span class="pill">📴 Works offline</span>
+        <span class="pill">🔒 Verified evidence (KYPiT)</span>
+      </div>
+    </div>
+    <div>
+      <div class="report" role="img" aria-label="VLX Home home inspection business software branded report — the deliverable">
+        <div class="rhead"><b>Home Inspection Report</b><span>VLX Home · 142 Oak Street</span></div>
+        <div class="rbody">
+          <div class="rrow"><span>Property type</span><b>Single-family</b></div>
+          <div class="rrow"><span>Inspector</span><b>J. Boyd</b></div>
+          <div class="rrow"><span>Roof</span><b>Attention</b></div>
+          <div class="rrow"><span>Electrical</span><b>Pass</b></div>
+          <div class="rflag">⚠️ Roof moisture · High priority · est. repair $1,800</div>
+          <div class="rphoto">📷 annotated, GPS-stamped photo</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PAIN POINTS -->
-<section class="section" style="background:var(--muted)">
-  <div class="wrap">
-    <div class="eyebrow">Why Home Inspectors Choose VLX Home</div>
-    <h2 style="margin-top:8px">The inspection is one hour of your day</h2>
-    <p class="lead">Running the business is the other twenty-three. VLX Home runs it for you.</p>
-    <div class="grid g2" style="margin-top:34px">
-      <div class="card reveal"><div class="ico">📞</div><h3>Bookings die on the phone</h3><p>Every missed call is a job that went to the inspector who picked up. A booking page that takes jobs while you sleep beats voicemail every time.</p></div>
-      <div class="card reveal"><div class="ico">🧩</div><h3>Five tools that don't talk</h3><p>A scheduler here, a report writer there, a payment app, a CRM, a spreadsheet. Data falls through the cracks between them.</p></div>
-      <div class="card reveal"><div class="ico">💸</div><h3>Money you have to chase</h3><p>Unsigned agreements and unpaid invoices pile up when payment isn't collected at booking. Cash flow stalls and reconciling it by hand eats your night.</p></div>
-      <div class="card reveal"><div class="ico">📈</div><h3>Admin that grows with volume</h3><p>Going from 3 to 8 inspections a day shouldn't triple your paperwork. Manual follow-up and formatting don't scale — automation does.</p></div>
-    </div>
+<!-- S2 · proof strip (no heading) -->
+<section class="proof">
+  <div class="wrap row">
+    <div class="logos"><span class="lg"></span><span class="lg"></span><span class="lg"></span><span class="lg"></span></div>
+    <div class="stat"><b>1,200 inspections</b><span>during the pilot</span></div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="section">
+<!-- S3 · service scope · 6 H3s -->
+<section class="section" id="included">
   <div class="wrap">
-    <div class="eyebrow">How VLX Home Works</div>
-    <h2 style="margin-top:8px">From the first booking to the final review</h2>
-    <p class="lead">Four steps, mostly on autopilot.</p>
-    <div class="steps">
-      <div class="s reveal"><div class="num">1</div><h3>Get booked</h3><p>Drop one snippet on your website and it becomes a booking engine. Clients pick a service, see live availability and an instant quote, sign the agreement, and pay — no phone call.</p></div>
-      <div class="s reveal"><div class="num">2</div><h3>Schedule &amp; dispatch</h3><p>Every booking lands as a confirmed job. VLX Home assigns the right inspector by proximity and availability, with conflict-free scheduling in the correct time zone.</p></div>
-      <div class="s reveal"><div class="num">3</div><h3>Inspect &amp; report</h3><p>Capture photos, voice notes and findings in the field app. AI drafts the summary and defect narratives; you review and publish a branded report to the client portal.</p></div>
-      <div class="s reveal"><div class="num">4</div><h3>Get paid &amp; reviewed</h3><p>Invoices, receipts and deposits run through Stripe. Then review requests and re-engagement go out automatically — every happy client feeds your next booking.</p></div>
+    <div class="center" style="max-width:720px;margin:0 auto">
+      <div class="eyebrow">What's included</div>
+      <h2 style="margin-top:8px">Everything a home inspection business runs on</h2>
+      <p class="lead center">One service instead of a scheduler, a report tool, a payment app and a spreadsheet — with home inspection scheduling, inspection templates and verified evidence built in.</p>
     </div>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="section" id="features" style="background:var(--muted)">
-  <div class="wrap">
-    <div class="eyebrow">The whole business, one login</div>
-    <h2 style="margin-top:8px">Everything around the inspection</h2>
-    <p class="lead">VLX owns the field. VLX Home owns everything else — from the first booking to the final review.</p>
-    <div class="grid g2" style="margin-top:34px">
-
-      <div class="feat reveal">
-        <div class="kicker">Online Booking</div>
-        <h3>Online booking on your own website</h3>
-        <p class="flead">Turn your site into a 24/7 booking engine. Clients pick a service, see a live quote and real-time availability, sign, and pay — in one 4-step flow.</p>
-        <div class="mech">
-          <div class="m"><b>Branded booking page + embeddable widget</b><span>A hosted booking page and a snippet you drop on your existing site — live from day one, matched to your brand.</span></div>
-          <div class="m"><b>Instant quotes &amp; live slots</b><span>A pricing engine handles services, add-ons, ZIP/city rules and discount codes, and shows real availability — no double-booking.</span></div>
-          <div class="m"><b>Signed &amp; paid before you arrive</b><span>The agreement is e-signed and the deposit collected at booking, so every job starts confirmed.</span></div>
-        </div>
-      </div>
-
-      <div class="feat reveal">
-        <div class="kicker">Scheduling &amp; Dispatch</div>
-        <h3>Scheduling &amp; dispatch that runs itself</h3>
-        <p class="flead">Day, week and month calendars, working hours, conflict detection, and time-zone-correct scheduling — plus automatic dispatch to the right inspector.</p>
-        <div class="mech">
-          <div class="m"><b>Conflict-free calendar</b><span>Block time, set weekly working hours, and flag conflicts before they happen. Export to .ics and sync two-way with Google Calendar.</span></div>
-          <div class="m"><b>Smart dispatch</b><span>Jobs route to the right inspector by proximity and eligibility, with client inspector-choice modes when you want them.</span></div>
-          <div class="m"><b>Correct time, every time</b><span>Scheduling respects each organization's time zone and handles daylight saving automatically.</span></div>
-        </div>
-      </div>
-
-      <div class="feat reveal">
-        <div class="kicker">Reports &amp; Compliance</div>
-        <h3>State-compliant reports, written in the field</h3>
-        <p class="flead">Capture on-site, let AI draft the narrative, and deliver a branded report your clients — and their insurers — accept.</p>
-        <div class="mech">
-          <div class="m"><b>AI-assisted reporting</b><span>Voice dictation and photo/video/audio capture become structured findings; AI drafts plain-language summaries and defect narratives you review and edit.</span></div>
-          <div class="m"><b>Every inspection type</b><span>From full home to Wind Mitigation, 4-Point, radon, mold, roof and sewer scope — one platform for every inspection you offer.</span></div>
-          <div class="m"><b>Built-in compliance forms</b><span>A 50-state form registry with proven classes like FL OIR-B1-1802, TREC REI 7-6 and Citizens 4-Point intake — signed in-app, with the TREC photo addendum included.</span></div>
-        </div>
-      </div>
-
-      <div class="feat reveal">
-        <div class="kicker">Payments &amp; Accounting</div>
-        <h3>Get paid automatically</h3>
-        <p class="flead">Stripe-powered deposits, invoices and receipts — at booking or on delivery. Nothing to chase, nothing to reconcile by hand.</p>
-        <div class="mech">
-          <div class="m"><b>Payment at booking</b><span>Collect deposits or full payment when the client books, with ACH and card support through Stripe.</span></div>
-          <div class="m"><b>Invoices on autopilot</b><span>Auto-generate invoices on delivery with PDF, pay links and payment terms — and gate the report behind payment when you choose.</span></div>
-          <div class="m"><b>Books that stay clean</b><span>One-way sync to QuickBooks keeps customers, invoices and payments in order.</span></div>
-        </div>
-      </div>
-
-      <div class="feat reveal">
-        <div class="kicker">Client Portal</div>
-        <h3>A client portal your buyers and agents love</h3>
-        <p class="flead">Give every client a passwordless portal with a live timeline, the report, and e-signed agreements — the professional experience that earns referrals.</p>
-        <div class="mech">
-          <div class="m"><b>Passwordless access</b><span>Clients open a magic link — no account, no password — to a 6-stage timeline of their inspection.</span></div>
-          <div class="m"><b>Report delivery + e-sign</b><span>The interactive web report, branded PDF and repair addendum arrive in the portal, with agreements e-signed in place.</span></div>
-          <div class="m"><b>Reviews that compound</b><span>A verified-review pipeline collects ratings after delivery, so every happy client feeds your next booking.</span></div>
-        </div>
-      </div>
-
-      <div class="feat reveal">
-        <div class="kicker">Platform</div>
-        <h3>One platform, one login</h3>
-        <p class="flead">CRM, scheduling, invoicing, reporting, online booking and team controls — plus the analytics to see what makes you money.</p>
-        <div class="mech">
-          <div class="m"><b>CRM + automation</b><span>Clients and corporate accounts, tasks, audit trail, ⌘K search, transactional email and automated reminders — the busywork runs itself.</span></div>
-          <div class="m"><b>Analytics that matter</b><span>Revenue by service, booking conversion, referral source and per-inspector production in one view, with a query builder and CSV export.</span></div>
-          <div class="m"><b>Roles, branding &amp; multi-company</b><span>Six roles with a per-user permission matrix, your branding throughout, and umbrella rollups for multi-company operators.</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- AI (dark) -->
-<section class="section dark" id="ai">
-  <div class="wrap">
-    <div class="eyebrow" style="color:var(--brand-light)">Built with working inspectors</div>
-    <h2 style="margin-top:8px">An AI co-inspector that actually ships reports</h2>
-    <p class="lead">Not a chatbot bolted on for the demo. VLX Home's AI is wired into the field workflow your team already runs on VLX.</p>
     <div class="grid g3" style="margin-top:34px">
-      <div class="card reveal"><div class="ico">🎙️</div><h3>AI Walkthrough</h3><p>Point your phone and talk. Photos and voice notes become structured fields in your template — no tapping through menus in a crawl space.</p></div>
-      <div class="card reveal"><div class="ico">🔎</div><h3>Deficiency detection</h3><p>AI flags likely defects and suggests severity ratings, so nothing gets missed and your judgment stays in control.</p></div>
-      <div class="card reveal"><div class="ico">✍️</div><h3>Report writer</h3><p>Plain-language summaries and defect narratives drafted for you — reviewed by you, delivered in minutes.</p></div>
+      <div class="card reveal"><div class="ico">📅</div><h3>Scheduling &amp; clients</h3><p>Home inspection scheduling with a client CRM, appointment confirmations and route planning — every job starts organized.</p></div>
+      <div class="card reveal"><div class="ico">📴</div><h3>Offline inspection app</h3><p>An offline inspection app — a full home inspection app with inspection templates and photo annotation that keeps working with no signal and syncs on return.</p></div>
+      <div class="card reveal"><div class="ico">📄</div><h3>Branded report engine</h3><p>Build your inspection report from a template in your own format — prioritized findings and annotated photos, no office rework.</p></div>
+      <div class="card reveal"><div class="ico">✍️</div><h3>Delivery &amp; e-signature</h3><p>Send a secure client link with a digital signature and receipt — you see who opened the report and when.</p></div>
+      <div class="card reveal"><div class="ico">💳</div><h3>Invoicing &amp; follow-up</h3><p>Inspection invoicing software ties the invoice to the job, tracks payment status and sends reminders automatically.</p></div>
+      <div class="card reveal"><div class="ico">🔒</div><h3>Verified evidence (KYPiT)</h3><p>Photo authentication software validates every capture, so the evidence behind each finding holds up.</p></div>
     </div>
   </div>
 </section>
 
-<!-- SWITCH / COMPARE -->
-<section class="section" id="compare">
+<!-- S4 · mechanism 1 · draggable job track -->
+<section class="section" id="job" style="background:var(--muted)">
   <div class="wrap">
-    <div class="eyebrow">Coming from Spectora, ISN or HomeGauge?</div>
-    <h2 style="margin-top:8px">Switch in about an hour. Everything transfers.</h2>
-    <p class="lead">Templates, contacts, agreements, services and past inspections come with you — keep the workflow you know, gain a platform that runs it end to end.</p>
-    <div class="compare-links">
-      <a href="#demo">VLX Home vs Spectora</a>
-      <a href="#demo">VLX Home vs ISN</a>
-      <a href="#demo">VLX Home vs HomeGauge <span class="soon">· soon</span></a>
-      <a href="#demo">VLX Home vs Home Inspector Pro <span class="soon">· soon</span></a>
+    <div class="eyebrow">One job, end to end</div>
+    <h2 style="margin-top:8px">From booking to invoice: one home inspection job in VLX</h2>
+    <p class="lead">Follow a single residential inspection through VLX Home — drag the track or use the buttons.</p>
+    <div class="track-wrap">
+      <div class="track" id="jobTrack" tabindex="0" aria-label="Path of one home inspection job">
+        <div class="jstep active"><div class="jn">01</div><h3>Book</h3><p>Appointment, address, property type and fee. The client gets an automatic confirmation email.</p></div>
+        <div class="jstep"><div class="jn">02</div><h3>Inspect</h3><p>Template by property type, GPS-stamped photos and voice-to-text notes. Works offline with no signal and syncs on return.</p></div>
+        <div class="jstep"><div class="jn">03</div><h3>Report</h3><p>Built from what you captured: prioritized findings, annotated photos, your own branded format — ready for same-day report delivery.</p></div>
+        <div class="jstep"><div class="jn">04</div><h3>Sign</h3><p>Client link, digital signature and receipt. Who opened it and when stays on record.</p></div>
+        <div class="jstep"><div class="jn">05</div><h3>Get paid</h3><p>Invoice tied to the job, live payment status and automatic payment reminders.</p></div>
+      </div>
+      <div class="track-ctl">
+        <button type="button" id="jPrev">← previous</button>
+        <button type="button" id="jNext">next →</button>
+        <span class="track-hint">Route planning · offline field work · same-day delivery · payment reminders</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- INTEGRATIONS -->
-<section class="section" style="background:var(--muted)">
+<!-- S5 · mechanism 2 · wipe comparator -->
+<section class="section">
   <div class="wrap">
-    <div class="eyebrow">Integrations &amp; Ecosystem</div>
-    <h2 style="margin-top:8px">Connects to the tools you already use</h2>
-    <p class="lead">Payments, calendar, accounting and your own website.</p>
-    <div class="integ">
-      <div class="i reveal"><b>Stripe payments</b><span>Checkout, deposits, ACH and refunds — collect at booking or on delivery.</span></div>
-      <div class="i reveal"><b>Google Calendar</b><span>Two-way calendar sync keeps your availability accurate everywhere.</span></div>
-      <div class="i reveal"><b>QuickBooks</b><span>One-way sync keeps customers, invoices and payments reconciled.</span></div>
-      <div class="i reveal"><b>REST API &amp; webhooks</b><span>A public REST API, API keys and outbound webhooks connect to the rest of your stack.</span></div>
+    <div class="wipe-grid">
+      <div>
+        <div class="eyebrow">The deliverable</div>
+        <h2 style="margin-top:8px">Home inspection reports clients actually read</h2>
+        <p class="lead">VLX Home is home inspection report software that turns field captures into a clean inspection report format — a plain summary of findings, state-required report forms and a repair cost estimate your client understands. Drag the slider to compare.</p>
+        <a class="btn btn-ghost" href="#demo" style="margin-top:18px">See the full example</a>
+      </div>
+      <div>
+        <div class="wipe" id="wipe" style="--wipe:54%">
+          <div class="pane after">
+            <span class="tg">With VLX Home</span>
+            <div class="ttl">Roof moisture · High priority</div>
+            <div class="ln hot"></div><div class="ln"></div><div class="ln" style="width:75%"></div>
+            <div class="ln hot" style="width:60%"></div><div class="ln" style="width:60%"></div>
+            <div class="meta">annotated photo + location + severity + cost · 4 min</div>
+          </div>
+          <div class="pane before">
+            <span class="tg">By hand, as today</span>
+            <div class="ttl">Roof moisture</div>
+            <div class="ln" style="width:60%"></div><div class="ln" style="width:45%"></div>
+            <div class="meta">notebook jottings + loose phone photos · 40 min of office work</div>
+          </div>
+          <div class="divider"></div>
+        </div>
+        <input type="range" class="wipe-range" id="wipeCtl" min="0" max="100" value="46" aria-label="Compare the handwritten report against the VLX Home report" />
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- S6 · dark KPI band -->
+<section class="section dark">
+  <div class="wrap">
+    <h2 class="center">What home inspectors stop losing to office work</h2>
+    <div class="kpis">
+      <div class="kpi reveal"><span class="v">−34 h</span><span class="l">of office work a month</span></div>
+      <div class="kpi reveal"><span class="v">0</span><span class="l">unpaid jobs</span></div>
+      <div class="kpi reveal"><span class="v">1 day</span><span class="l">to client delivery</span></div>
+      <div class="kpi reveal"><span class="v">100%</span><span class="l">verified evidence</span></div>
+    </div>
+    <p class="supp">Measured on inspection turnaround time, admin time per inspection, and inspections per week per inspector. <em>(Pilot figures — to validate before launch.)</em></p>
+  </div>
+</section>
+
+<!-- S7 · pricing -->
 <section class="section" id="pricing">
   <div class="wrap">
-    <div class="price reveal">
-      <div class="eyebrow center">Pricing that aligns with you</div>
-      <h2>Your bookings. Your clients. Your money.</h2>
-      <p>Plans grow with your team — never with a cut of the inspections you book. Every dollar a client pays you stays yours.</p>
-      <a class="btn btn-primary" href="#demo">Book a demo</a>
+    <div class="price-grid">
+      <div>
+        <div class="eyebrow">Pricing</div>
+        <h2 style="margin-top:8px">Home inspection software pricing</h2>
+        <p class="lead">Simple home inspection software cost: per-inspector pricing, no minimum, and a free trial with no credit card. Template migration from your current tool is included.</p>
+        <div class="chips">
+          <span class="chip">per inspector</span>
+          <span class="chip">no minimum</span>
+          <span class="chip">migration included</span>
+        </div>
+      </div>
+      <div class="plan reveal">
+        <div class="pl">VLX Home</div>
+        <div class="pv">$— <small>/inspector / mo</small></div>
+        <div class="pdesc">Everything included — booking, offline app, reports, signature and invoicing.</div>
+        <a class="btn btn-primary" href="#demo" style="width:100%;justify-content:center">Start Free Trial</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- S8 · FAQ (FAQPage schema) -->
 <section class="section" id="faq" style="background:var(--muted)">
   <div class="wrap">
-    <div class="eyebrow center">FAQ</div>
-    <h2 class="center" style="margin-top:8px">Frequently asked questions</h2>
-    <p class="lead center">Everything inspectors ask before switching to VLX Home.</p>
+    <div class="center" style="max-width:720px;margin:0 auto">
+      <div class="eyebrow">FAQ</div>
+      <h2 style="margin-top:8px">Home inspection software questions</h2>
+    </div>
     <div class="faq">
-      <details class="qa"><summary>What is home inspection software?<span class="plus"></span></summary><div class="a">Home inspection software runs the business side of inspecting: online booking, scheduling and dispatch, agreements, reports, payments and a client portal. VLX Home does all of it in one platform, wrapped around the VLX field app.</div></details>
-      <details class="qa"><summary>What's included in VLX Home?<span class="plus"></span></summary><div class="a">Online booking on your own site, scheduling and dispatch, AI-assisted reporting, 50-state compliance forms, Stripe payments and invoicing, a client portal, CRM and analytics — one login.</div></details>
-      <details class="qa"><summary>Does it support Wind Mitigation and 4-Point inspections?<span class="plus"></span></summary><div class="a">Yes. VLX Home ships Full Home, Wind Mitigation and 4-Point templates, plus a 50-state compliance form registry including FL OIR-B1-1802, TREC REI 7-6 and Citizens 4-Point intake.</div></details>
-      <details class="qa"><summary>Can clients book inspections online?<span class="plus"></span></summary><div class="a">Yes. Add a branded booking page or embed a widget on your existing site; clients pick a service, see a live quote and availability, sign the agreement and pay — no phone call.</div></details>
-      <details class="qa"><summary>Can I take payments and send invoices?<span class="plus"></span></summary><div class="a">Yes. Collect deposits or full payment at booking via Stripe (card and ACH), auto-generate invoices on delivery, and sync to QuickBooks.</div></details>
-      <details class="qa"><summary>Does it integrate with Google Calendar and QuickBooks?<span class="plus"></span></summary><div class="a">Yes — two-way Google Calendar sync and one-way QuickBooks sync, plus a REST API and webhooks for the rest of your stack.</div></details>
-      <details class="qa"><summary>Can inspectors write reports on-site?<span class="plus"></span></summary><div class="a">Yes. Capture photos, video and voice notes in the field app; AI drafts the summary and defect narratives; you review and deliver a branded report to the client portal, often the same day.</div></details>
-      <details class="qa"><summary>How is VLX Home different from Spectora or ISN?<span class="plus"></span></summary><div class="a">Most tools solve one slice — reports, or scheduling, or payments. VLX Home runs the whole path from online booking to payment in one platform, and switching takes about an hour.</div></details>
-      <details class="qa"><summary>Is my data secure?<span class="plus"></span></summary><div class="a">Yes. Per-organization encryption (AES-256-GCM), role-based access enforced on the server, and a platform built and tested by the team behind VLX.</div></details>
+      <details class="qa" open><summary>Does it work with no signal?<span class="plus"></span></summary><div class="a">Yes. The offline inspection app runs in full offline mode — capture photos, notes and signatures with no signal, and everything syncs automatically when you reconnect.</div></details>
+      <details class="qa"><summary>Can I keep my report format?<span class="plus"></span></summary><div class="a">Yes. VLX Home replicates your existing inspection report format — your branding, sections and state-required report forms — so the deliverable still looks like yours.</div></details>
+      <details class="qa"><summary>How long does migration take?<span class="plus"></span></summary><div class="a">Most inspectors switch in about an hour. Template migration is included: your templates, contacts, services and past inspections come with you.</div></details>
+      <details class="qa"><summary>Does it work for a solo inspector?<span class="plus"></span></summary><div class="a">Yes. There's a solo inspector plan, and mobile home inspection software that fits pre-purchase inspections and insurance inspection checklists whether you're one inspector or a team.</div></details>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="section" id="demo">
+<!-- S9 · canonical close -->
+<section class="final" id="demo">
   <div class="wrap">
-    <div class="final reveal">
-      <h2>Run your entire home inspection business in one place</h2>
-      <p>See VLX Home live on your own brand, or talk to us about migrating from your current tool.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a class="btn btn-primary" href="#">Book a demo</a>
-        <a class="btn btn-light" href="#">See it live</a>
-      </div>
-      <small>Built by the team behind VLX — the inspection field platform used by inspectors nationwide.</small>
+    <h2>Start your next home inspection in VLX</h2>
+    <p>Run the whole residential job — booking to payment — on home inspection business software built by the team behind VLX.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-primary" href="#">Start Free Trial</a>
+      <a class="btn btn-light" href="#">Book a Demo</a>
     </div>
   </div>
 </section>
@@ -438,17 +369,68 @@
 <footer>
   <div class="wrap">
     <div class="cols">
-      <div class="brand" style="font-size:18px;font-weight:700"><span style="color:var(--brand)">■</span> VLX Home</div>
-      <div style="max-width:520px">Home inspection software that runs your whole business — online booking, scheduling, dispatch, state-compliant reports and payments in one platform.</div>
+      <div>
+        <div class="brand" style="color:#fff;font-size:18px"><span style="color:var(--brand)">■</span> VLX Home</div>
+        <p style="margin-top:10px;max-width:420px">Home inspection business software that runs the whole residential job — scheduling, offline inspection app, branded reports, signature and invoicing.</p>
+      </div>
+      <div>
+        <b>Product</b>
+        <a href="#included">Features</a>
+        <a href="#job">How it works</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <div>
+        <b>VLX</b>
+        <a href="https://vlx.ai/digital-inspections-software/">Digital inspection software</a>
+        <a href="https://vlx.ai/digital-inspections-software/home-inspectors/">Home inspection software</a>
+        <a href="#demo">Book a demo</a>
+      </div>
     </div>
-    <div class="note">Preview build for content review — VLX Home content proposal. This is not the production website and is set to <b>noindex</b>. © Visualogyx (VLX), Aventura, FL.</div>
+    <div class="note">Preview build for content &amp; SEO review — VLX Home service page, wireframe v3. Not the production website; set to <b>noindex, nofollow</b>. © Visualogyx (VLX), Aventura, FL.</div>
   </div>
 </footer>
 
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"VLX Home","applicationCategory":"BusinessApplication","operatingSystem":"Web, iOS, Android","description":"Home inspection business software that runs the whole residential inspection job — scheduling, offline inspection app, branded reports, e-signature and invoicing."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Does it work with no signal?","acceptedAnswer":{"@type":"Answer","text":"Yes. The offline inspection app runs in full offline mode and syncs automatically when you reconnect."}},
+{"@type":"Question","name":"Can I keep my report format?","acceptedAnswer":{"@type":"Answer","text":"Yes. VLX Home replicates your existing inspection report format, branding and state-required report forms."}},
+{"@type":"Question","name":"How long does migration take?","acceptedAnswer":{"@type":"Answer","text":"Most inspectors switch in about an hour. Template migration is included."}},
+{"@type":"Question","name":"Does it work for a solo inspector?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is a solo inspector plan and mobile home inspection software for teams of any size."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Digital Inspection Software","item":"https://vlx.ai/digital-inspections-software/"},
+{"@type":"ListItem","position":2,"name":"VLX Home","item":"https://vlx.ai/digital-inspections-software/app/vlx-home/"}
+]}
+</script>
+
 <script>
   // reveal on scroll
-  const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // S4 job track: click to activate + prev/next + drag to scroll
+  const track=document.getElementById('jobTrack');
+  const steps=[...track.querySelectorAll('.jstep')];
+  let idx=0;
+  function setActive(i){idx=Math.max(0,Math.min(steps.length-1,i));steps.forEach((s,k)=>s.classList.toggle('active',k===idx));steps[idx].scrollIntoView({behavior:'smooth',inline:'start',block:'nearest'});}
+  steps.forEach((s,k)=>s.addEventListener('click',()=>setActive(k)));
+  document.getElementById('jPrev').addEventListener('click',()=>setActive(idx-1));
+  document.getElementById('jNext').addEventListener('click',()=>setActive(idx+1));
+  track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();setActive(idx+1);}if(e.key==='ArrowLeft'){e.preventDefault();setActive(idx-1);}});
+  // drag to scroll
+  let down=false,sx=0,sl=0;
+  track.addEventListener('pointerdown',e=>{down=true;track.classList.add('drag');sx=e.pageX;sl=track.scrollLeft;});
+  window.addEventListener('pointerup',()=>{down=false;track.classList.remove('drag');});
+  track.addEventListener('pointermove',e=>{if(!down)return;track.scrollLeft=sl-(e.pageX-sx);});
+
+  // S5 wipe comparator
+  const wipe=document.getElementById('wipe'),ctl=document.getElementById('wipeCtl');
+  ctl.addEventListener('input',()=>{wipe.style.setProperty('--wipe',ctl.value+'%');});
 </script>
 </body>
 </html>
