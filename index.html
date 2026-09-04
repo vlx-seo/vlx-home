@@ -12,7 +12,7 @@
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
     --brand:#FF5722; --brand-dark:#E64A19; --brand-darker:#C63A0A; --brand-light:#FF8A65; --brand-soft:#FFF1EC;
@@ -129,8 +129,11 @@
   .wipe .wrows span{color:var(--text-3)}
   .wipe .wrows b{color:var(--text)}
   .wipe .wdesc{font-size:12px;color:var(--text-2);margin-top:12px;line-height:1.45}
-  .wipe .scrib{margin-top:12px;display:flex;flex-direction:column;gap:10px;opacity:.7}
-  .wipe .scrib i{height:8px;border-radius:5px;background:#DBE3EA;display:block}
+  .wipe .bphoto{margin-top:12px;height:56px;border-radius:8px;border:1px dashed #C3CDD6;background:#EAEFF3;display:flex;align-items:center;justify-content:center;color:var(--text-3);font-size:11px;transform:rotate(-1.2deg)}
+  .wipe .bnotes{list-style:none;margin:16px 0 0;padding:0;font-family:'Caveat',cursive;font-size:19px;line-height:1.55;color:#607080}
+  .wipe .bnotes li{position:relative;padding-left:18px}
+  .wipe .bnotes li::before{content:"–";position:absolute;left:0;color:#9AA7B2}
+  .wipe .bnotes li.strike{text-decoration:line-through;opacity:.55}
   .wipe .meta{font-size:11px;color:var(--text-3);margin-top:auto;padding-top:10px;font-family:ui-monospace,monospace}
   .wipe .divider{position:absolute;top:0;bottom:0;left:var(--wipe,54%);width:2px;background:var(--brand-darker);transform:translateX(-1px)}
   .wipe .handle{position:absolute;top:50%;left:var(--wipe,54%);transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:#fff;border:2px solid var(--brand-darker);box-shadow:0 4px 12px rgba(38,50,56,.18);display:flex;align-items:center;justify-content:center;color:var(--brand-darker);font-size:14px;font-weight:700;pointer-events:none}
@@ -381,7 +384,14 @@
           <div class="pane before">
             <span class="tg">By hand, as today</span>
             <div class="ttl">Roof moisture</div>
-            <div class="scrib"><i style="width:72%"></i><i style="width:54%"></i><i style="width:64%"></i><i style="width:38%"></i></div>
+            <div class="bphoto">Loose phone photo — which slope?</div>
+            <ul class="bnotes">
+              <li>wet spot on roof — NE? NW?</li>
+              <li class="strike">measure the area</li>
+              <li>severity — ??</li>
+              <li>repair cost — ask a contractor</li>
+              <li>attach the right photo??</li>
+            </ul>
             <div class="meta">notebook jottings + loose phone photos · 40 min of office work</div>
           </div>
           <div class="divider"></div>
