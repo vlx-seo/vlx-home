@@ -172,16 +172,29 @@
   .related a{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;text-decoration:none;color:var(--text);font-weight:600;font-size:15.5px;transition:.18s}
   .related a:hover{border-color:var(--brand);color:var(--brand-darker);transform:translateY(-2px);box-shadow:var(--shadow)}
   .related a span{display:block;margin-top:5px;font-size:13px;font-weight:400;color:var(--text-2)}
+  /* blog preview (matches BlogPreview.tsx on service pages) — section is hidden for now */
+  [hidden]{display:none!important}
+  .blog-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:38px;flex-wrap:wrap}
+  .viewall{color:var(--brand);font-weight:500;font-size:16px;text-decoration:none;white-space:nowrap}
+  .viewall:hover{color:var(--brand-darker)}
+  .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .post{display:block;background:#fff;border:1px solid #EEF1F4;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(38,50,56,.04);transition:.2s;text-decoration:none;color:inherit}
+  .post:hover{box-shadow:0 16px 34px rgba(38,50,56,.10);transform:translateY(-2px)}
+  .post .cover{aspect-ratio:16/9;background:linear-gradient(135deg,#FFF1EC,#FFE0D6)}
+  .post .pbody{padding:20px}
+  .post .pcat{font-size:12px;font-weight:500;letter-spacing:.9px;text-transform:uppercase;color:var(--brand)}
+  .post h3{font-size:18px;font-weight:600;line-height:1.35;color:var(--text);margin:8px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .post .pdate{display:block;margin-top:16px;font-size:14px;color:var(--text-3)}
   .reveal{opacity:0;transform:translateY(14px);transition:.6s ease}.reveal.in{opacity:1;transform:none}
   @media(max-width:920px){
     .wrap{padding:0 24px}
     .nav-links{display:none}
     .hero-grid,.wipe-grid,.price-grid{grid-template-columns:1fr}
-    .g2,.g3,.g4,.stats,.integ,.svc,.related{grid-template-columns:1fr 1fr}
+    .g2,.g3,.g4,.stats,.integ,.svc,.related,.blog-grid{grid-template-columns:1fr 1fr}
     .section{padding:56px 0}.report,.report-img{transform:none;margin-top:26px}
     footer .cols{grid-template-columns:1fr 1fr}
   }
-  @media(max-width:560px){.g2,.g3,.g4,.stats,.integ,.svc,.related{grid-template-columns:1fr}.nav-cta .btn-ghost{display:none}}
+  @media(max-width:560px){.g2,.g3,.g4,.stats,.integ,.svc,.related,.blog-grid{grid-template-columns:1fr}.nav-cta .btn-ghost{display:none}}
 </style>
 </head>
 <body>
@@ -438,6 +451,45 @@
       <a href="https://vlx.ai/digital-inspections-software/real-estate/">For real estate agents<span>Move-in &amp; property walkthroughs</span></a>
       <a href="https://vlx.ai/digital-inspections-software/inspection-companies/">For inspection companies<span>Scheduling &amp; team management</span></a>
       <a href="https://vlx.ai/developers/">Developers &amp; API<span>REST API, keys &amp; webhooks</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW · HIDDEN FOR NOW.
+     Remove the `hidden` (and aria-hidden) attribute on the <section> to reveal it once related
+     blog posts exist. The three cards are placeholders to be swapped for real related articles;
+     links currently point to the blog index. Aesthetics mirror BlogPreview.tsx on the service pages. -->
+<section class="section" style="background:var(--muted)" id="blog" hidden aria-hidden="true">
+  <div class="wrap">
+    <div class="blog-head">
+      <h2>Latest from the <span class="accent">VLX Blog</span></h2>
+      <a class="viewall" href="https://vlx.ai/blog/">View All Posts →</a>
+    </div>
+    <div class="blog-grid">
+      <a class="post" href="https://vlx.ai/blog/">
+        <div class="cover" style="background:linear-gradient(135deg,#1E293B,#334155)"></div>
+        <div class="pbody">
+          <span class="pcat">Grow your business</span>
+          <h3>How to start a home inspection business in 2026</h3>
+          <span class="pdate">Coming soon</span>
+        </div>
+      </a>
+      <a class="post" href="https://vlx.ai/blog/">
+        <div class="cover" style="background:linear-gradient(135deg,#FFF1EC,#FFCDB8)"></div>
+        <div class="pbody">
+          <span class="pcat">Compliance</span>
+          <h3>Wind mitigation vs. 4-point inspection: what Florida clients need</h3>
+          <span class="pdate">Coming soon</span>
+        </div>
+      </a>
+      <a class="post" href="https://vlx.ai/blog/">
+        <div class="cover" style="background:linear-gradient(135deg,#E3ECF2,#CFE0EA)"></div>
+        <div class="pbody">
+          <span class="pcat">Software</span>
+          <h3>Choosing home inspection software: a buyer&rsquo;s checklist</h3>
+          <span class="pdate">Coming soon</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
