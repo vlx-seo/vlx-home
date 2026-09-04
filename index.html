@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<!-- Canonical target route (production): /digital-inspections-software/app/vlx-home/ (interim preview URL: /home-inspection) -->
+<!-- Canonical target route (production): /digital-inspections-software/home-inspection/ - decidida por Lau el 2026-09-04.
+     La sectorial /digital-inspections-software/home-inspectors/ se 301 A ESTA pagina, asi que NO se enlaza desde aca (seria auto-referencia via redirect). -->
 <title>Home Inspection Software — Run Your Whole Business | VLX Home</title>
 <meta name="description" content="Home inspection software that runs your whole business — booking, scheduling, offline inspections, branded reports, payments and every inspection type. Start a free trial." />
 <meta name="robots" content="noindex, nofollow" />
@@ -101,17 +102,41 @@
   .svc .s span{font-size:13.5px;color:var(--text-2)}
   /* job track */
   .track-wrap{margin-top:34px}
-  .track{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 16px;scroll-snap-type:x mandatory;cursor:grab}
+  .track{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 12px;scroll-snap-type:x mandatory;cursor:grab}
   .track.drag{cursor:grabbing}
   .jstep{scroll-snap-align:start;flex:0 0 264px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;transition:.2s;user-select:none}
   .jstep.active{border-color:var(--brand-darker);box-shadow:0 10px 26px rgba(198,58,10,.12)}
   .jstep .jn{width:34px;height:34px;border-radius:9px;background:var(--brand-soft);color:var(--brand-darker);font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
   .jstep.active .jn{background:var(--brand-darker);color:#fff}
   .jstep h3{font-size:16px;margin-bottom:6px}.jstep p{font-size:13.5px;color:var(--text-2)}
-  .track-ctl{display:flex;gap:10px;margin-top:6px;align-items:center}
-  .track-ctl button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 16px;font-weight:500;font-size:14px;color:var(--text);cursor:pointer;font-family:inherit}
-  .track-ctl button:hover{border-color:var(--text-2)}
-  .track-hint{font-size:12.5px;color:var(--text-3);margin-left:auto}
+  .track-viewport{position:relative}
+  /* la barra nativa solo se oculta si el JS esta vivo: sin JS queda como fallback */
+  .track-viewport.js .track{scrollbar-width:none;-ms-overflow-style:none}
+  .track-viewport.js .track::-webkit-scrollbar{display:none}
+  /* desvanecido a los lados: senal permanente de que queda contenido */
+  .track-fade{position:absolute;top:0;bottom:12px;width:64px;pointer-events:none;opacity:0;transition:opacity .25s;z-index:2}
+  .track-fade.l{left:0;background:linear-gradient(to left,rgba(255,255,255,0),#fff 72%)}
+  .track-fade.r{right:0;background:linear-gradient(to right,rgba(255,255,255,0),#fff 72%)}
+  .track-viewport[data-l="1"] .track-fade.l,.track-viewport[data-r="1"] .track-fade.r{opacity:1}
+  /* flechas laterales */
+  .track-arrow{position:absolute;top:50%;margin-top:-28px;width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:#fff;box-shadow:0 2px 4px rgba(38,50,56,.06),0 8px 20px rgba(38,50,56,.10);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text);z-index:3;padding:0;transition:border-color .18s,color .18s,opacity .18s}
+  .track-arrow svg{width:19px;height:19px}
+  .track-arrow.prev{left:-21px}.track-arrow.next{right:-21px}
+  .track-arrow:hover:not([disabled]){border-color:var(--brand-darker);color:var(--brand-darker)}
+  .track-arrow:focus-visible{outline:2px solid var(--brand-darker);outline-offset:2px}
+  .track-arrow[disabled]{opacity:.3;cursor:default;box-shadow:none}
+  /* punticos + contador */
+  .track-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:14px}
+  .track-dots{display:flex;align-items:center;gap:3px}
+  .track-dots button{border:0;background:none;padding:8px 5px;line-height:0;cursor:pointer;border-radius:6px}
+  .track-dots button:focus-visible{outline:2px solid var(--brand-darker);outline-offset:0}
+  /* #64757F = 4,78:1 sobre blanco. El --line del sitio (#E5E7EB) da 1,24:1 y no cumple el 3:1 de WCAG 1.4.11 */
+  .track-dots i{display:block;width:8px;height:8px;border-radius:999px;background:#64757F;transition:width .22s,background .22s,border-radius .22s}
+  .track-dots button[aria-current="true"] i{width:26px;border-radius:4px;background:var(--brand-darker)}
+  .track-count{font-size:13px;font-weight:500;color:var(--text-3);font-variant-numeric:tabular-nums}
+  .track-hint{font-size:12.5px;color:var(--text-3);text-align:center;margin-top:12px}
+  @media(max-width:560px){.track-arrow{display:none}}
+  @media(prefers-reduced-motion:reduce){.track-arrow,.track-dots i,.track-fade{transition:none}}
   /* wipe */
   .wipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:8px}
   .wipe{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:var(--shadow);height:340px}
@@ -235,7 +260,7 @@
     </nav>
     <div class="nav-cta">
       <a class="btn btn-ghost" href="https://vlx.ai/demo/">Book a Demo</a>
-      <a class="btn btn-primary" href="https://app.vlx.ai/login/?plan=ProfessionalTrial">Start Free Trial</a>
+      <a class="btn btn-primary" href="https://app.visualogyx.com/login/?plan=ProfessionalTrial">Start Free Trial</a>
     </div>
   </div>
 </header>
@@ -247,11 +272,11 @@
     <div class="hero-grid">
       <div>
         <div class="eyebrow">New service · VLX Home</div>
-        <h1>VLX Home: the complete home inspection software, <span class="accent">from booking to payment</span></h1>
+        <h1>Home inspection software, <span class="accent">from booking to payment</span> &mdash; VLX Home</h1>
         <p class="sub">VLX Home is the home inspection software that runs your whole residential business — schedule the appointment, inspect offline in the field, deliver a branded report, collect the signature and get paid, across every inspection type you offer.</p>
         <p class="subkw"><b>Also covers:</b> home inspection business software · inspection scheduling software · offline inspection app · home inspection app · get paid faster</p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="https://app.vlx.ai/login/?plan=ProfessionalTrial">Start Free Trial</a>
+          <a class="btn btn-primary" href="https://app.visualogyx.com/login/?plan=ProfessionalTrial">Start Free Trial</a>
           <a class="btn btn-ghost" href="https://vlx.ai/demo/">Book a Demo</a>
         </div>
         <div class="trust-inline">
@@ -341,8 +366,9 @@
   <div class="wrap">
     <div class="eyebrow">One job, end to end</div>
     <h2 style="margin-top:10px">From booking to invoice: one home inspection job in VLX</h2>
-    <p class="lead">Follow a single residential inspection through VLX Home — drag the track or use the buttons.</p>
+    <p class="lead">Follow a single residential inspection through VLX Home, from the first call to the paid invoice.</p>
     <div class="track-wrap">
+      <div class="track-viewport" id="jobViewport" role="group" aria-roledescription="carousel" aria-label="One home inspection job, step by step">
       <div class="track" id="jobTrack" tabindex="0" aria-label="Path of one home inspection job">
         <div class="jstep active"><div class="jn">01</div><h3>Book</h3><p>Appointment, address, property type and fee. The client gets an automatic confirmation email.</p></div>
         <div class="jstep"><div class="jn">02</div><h3>Inspect</h3><p>Template by property type, GPS-stamped photos and voice-to-text notes. Works offline with no signal and syncs on return.</p></div>
@@ -350,11 +376,16 @@
         <div class="jstep"><div class="jn">04</div><h3>Sign</h3><p>Client link, digital signature and receipt. Who opened it and when stays on record.</p></div>
         <div class="jstep"><div class="jn">05</div><h3>Get paid</h3><p>Invoice tied to the job, live payment status and automatic payment reminders.</p></div>
       </div>
-      <div class="track-ctl">
-        <button type="button" id="jPrev">← previous</button>
-        <button type="button" id="jNext">next →</button>
-        <span class="track-hint">Route planning · offline field work · same-day delivery · payment reminders</span>
+      <div class="track-fade l" aria-hidden="true"></div>
+      <div class="track-fade r" aria-hidden="true"></div>
+      <button type="button" class="track-arrow prev" id="jPrev" aria-label="Previous step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button type="button" class="track-arrow next" id="jNext" aria-label="Next step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
       </div>
+      <div class="track-nav">
+        <div class="track-dots" id="jobDots"></div>
+        <span class="track-count" id="jobCount">01 / 05</span>
+      </div>
+      <p class="track-hint">Route planning &middot; offline field work &middot; same-day delivery &middot; payment reminders</p>
     </div>
   </div>
 </section>
@@ -366,8 +397,8 @@
       <div>
         <div class="eyebrow">The deliverable</div>
         <h2 style="margin-top:10px">Home inspection reports clients actually read</h2>
-        <p class="lead">VLX Home is <a class="ilink" href="https://vlx.ai/digital-inspections-software/home-inspectors/">home inspection report software</a> that turns field captures into a clean inspection report format — a plain summary of findings, state-required report forms and a repair cost estimate your client understands. Drag the slider to compare.</p>
-        <a class="btn btn-ghost" href="https://vlx.ai/demo/" style="margin-top:20px">See the full example</a>
+        <p class="lead">VLX Home is <b>home inspection report software</b> that turns field captures into a clean inspection report format — a plain summary of findings, state-required report forms and a repair cost estimate your client understands. Drag the slider to compare.</p>
+        <a class="btn btn-primary" href="https://vlx.ai/demo/" style="margin-top:20px">Book a Demo</a>
       </div>
       <div>
         <div class="wipe" id="wipe" style="--wipe:50%">
@@ -460,7 +491,7 @@
         <div class="pl">VLX Home</div>
         <div class="pv">Per inspector</div>
         <div class="pdesc">Everything included — booking, offline app, reports, signature, invoicing and every inspection type.</div>
-        <a class="btn btn-primary" href="https://app.vlx.ai/login/?plan=ProfessionalTrial" style="width:100%;justify-content:center">Start Free Trial</a>
+        <a class="btn btn-primary" href="https://app.visualogyx.com/login/?plan=ProfessionalTrial" style="width:100%;justify-content:center">Start Free Trial</a>
       </div>
     </div>
   </div>
@@ -492,7 +523,7 @@
     </div>
     <div class="related">
       <a href="https://vlx.ai/digital-inspections-software/">Digital inspection software<span>The VLX platform overview</span></a>
-      <a href="https://vlx.ai/digital-inspections-software/home-inspectors/">Home inspection report software<span>Fast on-site reports &amp; custom formats</span></a>
+      <a href="https://vlx.ai/digital-inspections-software/insurance/">Insurance inspections<span>Wind mitigation &amp; 4-point for carriers</span></a>
       <a href="https://vlx.ai/digital-inspections-software/app/kypit/">KYPiT<span>AI photo fraud detection for your evidence</span></a>
       <a href="https://vlx.ai/digital-inspections-software/real-estate/">For real estate agents<span>Move-in &amp; property walkthroughs</span></a>
       <a href="https://vlx.ai/digital-inspections-software/inspection-companies/">For inspection companies<span>Scheduling &amp; team management</span></a>
@@ -533,7 +564,7 @@
     <h2>Start your next home inspection in VLX</h2>
     <p>Run the whole residential job — booking to payment — on home inspection business software built by the team behind VLX.</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a class="btn btn-primary" href="https://app.vlx.ai/login/?plan=ProfessionalTrial">Start Free Trial</a>
+      <a class="btn btn-primary" href="https://app.visualogyx.com/login/?plan=ProfessionalTrial">Start Free Trial</a>
       <a class="btn btn-ghost dark" href="https://vlx.ai/demo/">Book a Demo</a>
     </div>
   </div>
@@ -562,7 +593,7 @@
       <div>
         <b>VLX</b>
         <a href="https://vlx.ai/digital-inspections-software/">Digital inspection software</a>
-        <a href="https://vlx.ai/digital-inspections-software/home-inspectors/">Home inspection report software</a>
+        <a href="https://vlx.ai/digital-inspections-software/insurance/">Insurance inspection software</a>
         <a href="https://vlx.ai/digital-inspections-software/app/kypit/">KYPiT · photo authentication</a>
         <a href="https://vlx.ai/demo/">Book a demo</a>
       </div>
@@ -585,8 +616,9 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-{"@type":"ListItem","position":1,"name":"Digital Inspection Software","item":"https://vlx.ai/digital-inspections-software/"},
-{"@type":"ListItem","position":2,"name":"VLX Home","item":"https://vlx.ai/digital-inspections-software/app/vlx-home/"}
+{"@type":"ListItem","position":1,"name":"Home","item":"https://vlx.ai"},
+{"@type":"ListItem","position":2,"name":"Digital Inspection Software","item":"https://vlx.ai/digital-inspections-software/"},
+{"@type":"ListItem","position":3,"name":"VLX Home"}
 ]}
 </script>
 
@@ -594,17 +626,70 @@
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   const track=document.getElementById('jobTrack');
+  const vp=document.getElementById('jobViewport');
   const steps=[...track.querySelectorAll('.jstep')];
+  const dotsBox=document.getElementById('jobDots');
+  const countEl=document.getElementById('jobCount');
+  const prevB=document.getElementById('jPrev'),nextB=document.getElementById('jNext');
+  const noMotion=matchMedia('(prefers-reduced-motion:reduce)').matches;
   let idx=0;
-  function setActive(i){idx=Math.max(0,Math.min(steps.length-1,i));steps.forEach((s,k)=>s.classList.toggle('active',k===idx));steps[idx].scrollIntoView({behavior:'smooth',inline:'start',block:'nearest'});}
+  vp.classList.add('js');                       // sin JS se queda la barra nativa como fallback
+  steps.forEach((s,k)=>{                        // un puntico por paso, con su nombre para lectores de pantalla
+    const b=document.createElement('button');
+    b.type='button';b.innerHTML='<i></i>';
+    b.setAttribute('aria-label','Step '+(k+1)+': '+((s.querySelector('h3')||{}).textContent||''));
+    b.addEventListener('click',()=>setActive(k));
+    dotsBox.appendChild(b);
+  });
+  const dots=[...dotsBox.children];
+  const pad=n=>String(n).padStart(2,'0');
+  function edges(){                             // el desvanecido solo donde queda algo por ver
+    const max=track.scrollWidth-track.clientWidth-2;
+    vp.dataset.l=track.scrollLeft>4?'1':'0';
+    vp.dataset.r=track.scrollLeft<max?'1':'0';
+  }
+  function paint(){
+    steps.forEach((s,k)=>s.classList.toggle('active',k===idx));
+    dots.forEach((d,k)=>d.setAttribute('aria-current',k===idx?'true':'false'));
+    countEl.textContent=pad(idx+1)+' / '+pad(steps.length);
+    prevB.disabled=idx===0;                     // en los extremos la flecha se apaga, no queda muerta
+    nextB.disabled=idx===steps.length-1;
+    edges();
+  }
+  function setActive(i){
+    idx=Math.max(0,Math.min(steps.length-1,i));
+    steps[idx].scrollIntoView({behavior:noMotion?'auto':'smooth',inline:'start',block:'nearest'});
+    paint();
+  }
+  function nearest(){                           // con rects: no depende del offsetParent
+    const tr=track.getBoundingClientRect(),c=tr.left+tr.width/2;
+    let best=0,bd=Infinity;
+    steps.forEach((s,k)=>{const r=s.getBoundingClientRect(),d=Math.abs(r.left+r.width/2-c);if(d<bd){bd=d;best=k;}});
+    return best;
+  }
   steps.forEach((s,k)=>s.addEventListener('click',()=>setActive(k)));
-  document.getElementById('jPrev').addEventListener('click',()=>setActive(idx-1));
-  document.getElementById('jNext').addEventListener('click',()=>setActive(idx+1));
+  prevB.addEventListener('click',()=>setActive(idx-1));
+  nextB.addEventListener('click',()=>setActive(idx+1));
   track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();setActive(idx+1);}if(e.key==='ArrowLeft'){e.preventDefault();setActive(idx-1);}});
+  let raf=0;
+  track.addEventListener('scroll',()=>{         // al arrastrar, el puntico sigue al carril
+    edges();cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(()=>{const n=nearest();if(n!==idx){idx=n;paint();}});
+  },{passive:true});
   let down=false,sx=0,sl=0;
   track.addEventListener('pointerdown',e=>{down=true;track.classList.add('drag');sx=e.pageX;sl=track.scrollLeft;});
   window.addEventListener('pointerup',()=>{down=false;track.classList.remove('drag');});
   track.addEventListener('pointermove',e=>{if(!down)return;track.scrollLeft=sl-(e.pageX-sx);});
+  window.addEventListener('resize',edges);
+  paint();
+  if(!noMotion){                                // empujoncito una sola vez: revela el gesto sin texto
+    const nio=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
+      nio.unobserve(e.target);
+      setTimeout(()=>{track.scrollTo({left:32,behavior:'smooth'});
+        setTimeout(()=>track.scrollTo({left:0,behavior:'smooth'}),500);},400);
+    }});},{threshold:.35});
+    nio.observe(vp);
+  }
   const wipe=document.getElementById('wipe'),ctl=document.getElementById('wipeCtl');
   ctl.addEventListener('input',()=>{wipe.style.setProperty('--wipe',ctl.value+'%');});
 
