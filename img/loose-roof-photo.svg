@@ -1,29 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 110" role="img" aria-label="Loose, blurry phone photo of the same roof — no annotation">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 110" role="img" aria-label="Photo of the roof — the same slope, without annotations">
   <defs>
     <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#D8E4EE"/><stop offset="1" stop-color="#C3D2DE"/>
+      <stop offset="0" stop-color="#CFE4F2"/><stop offset="1" stop-color="#B7D2E6"/>
     </linearGradient>
     <linearGradient id="shingle2" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#98A1A9"/><stop offset="1" stop-color="#7C858D"/>
+      <stop offset="0" stop-color="#8C959D"/><stop offset="1" stop-color="#69727A"/>
     </linearGradient>
-    <filter id="blur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.2"/></filter>
-    <radialGradient id="flare" cx="82%" cy="14%" r="55%">
-      <stop offset="0" stop-color="#ffffff" stop-opacity=".5"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="vig" cx="50%" cy="50%" r="72%">
-      <stop offset="60%" stop-color="#0f172a" stop-opacity="0"/><stop offset="100%" stop-color="#0f172a" stop-opacity=".28"/>
+    <filter id="soft" x="-6%" y="-6%" width="112%" height="112%"><feGaussianBlur stdDeviation="0.7"/></filter>
+    <radialGradient id="vig2" cx="50%" cy="50%" r="75%">
+      <stop offset="66%" stop-color="#0f172a" stop-opacity="0"/><stop offset="100%" stop-color="#0f172a" stop-opacity=".18"/>
     </radialGradient>
   </defs>
-  <!-- Same roof geometry as annotated-roof.svg, but blurred, washed out and un-annotated -->
-  <g filter="url(#blur)">
+  <!-- Same roof scene as annotated-roof.svg, colour photo, just no VLX markup -->
+  <g filter="url(#soft)">
     <rect width="380" height="110" fill="url(#sky2)"/>
     <path d="M0 44 L380 18 L380 110 L0 110 Z" fill="url(#shingle2)"/>
-    <g stroke="#7d858d" stroke-width="1.1" opacity=".4">
+    <g stroke="#565f67" stroke-width="1.1" opacity=".45">
       <path d="M0 60 L380 36"/><path d="M0 76 L380 55"/><path d="M0 92 L380 74"/>
     </g>
-    <ellipse cx="146" cy="76" rx="48" ry="21" fill="#434d57" opacity=".4"/>
-    <ellipse cx="146" cy="76" rx="30" ry="12" fill="#333c45" opacity=".38"/>
+    <g fill="#565f67" opacity=".3">
+      <rect x="30" y="46" width="1.6" height="13"/><rect x="90" y="42" width="1.6" height="13"/><rect x="150" y="38" width="1.6" height="13"/><rect x="210" y="34" width="1.6" height="13"/><rect x="270" y="30" width="1.6" height="13"/><rect x="330" y="26" width="1.6" height="13"/>
+      <rect x="60" y="63" width="1.6" height="12"/><rect x="120" y="59" width="1.6" height="12"/><rect x="180" y="55" width="1.6" height="12"/><rect x="240" y="51" width="1.6" height="12"/><rect x="300" y="47" width="1.6" height="12"/>
+    </g>
+    <ellipse cx="146" cy="76" rx="48" ry="21" fill="#39434D" opacity=".5"/>
+    <ellipse cx="146" cy="76" rx="30" ry="12" fill="#28313A" opacity=".5"/>
   </g>
-  <rect width="380" height="110" fill="url(#flare)"/>
-  <rect width="380" height="110" fill="url(#vig)"/>
+  <rect width="380" height="110" fill="url(#vig2)"/>
 </svg>
