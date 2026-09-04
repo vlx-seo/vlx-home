@@ -84,8 +84,9 @@
   .proof .row{display:flex;align-items:center;gap:30px;flex-wrap:wrap;justify-content:space-between;padding:26px 0}
   .proof .tl{font-size:14px;color:var(--text-3);font-weight:500;max-width:320px}
   .proof .tl b{color:var(--text-2)}
-  .proof .logos{display:flex;gap:26px;flex-wrap:wrap;align-items:center;opacity:.5}
-  .proof .logos .lg{width:88px;height:24px;background:#94A3B8;border-radius:5px}
+  .proof .logos{display:flex;gap:30px;flex-wrap:wrap;align-items:center}
+  .proof .logos img{height:26px;width:auto;object-fit:contain;filter:grayscale(100%);opacity:.6;transition:.2s}
+  .proof .logos img:hover{filter:grayscale(0);opacity:1}
   .grid{display:grid;gap:22px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
   .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.2s}
   .card:hover{box-shadow:var(--shadow);border-color:#D8DEE4}
@@ -256,7 +257,14 @@
 <section class="proof">
   <div class="wrap row">
     <div class="tl">Built on the <b>VLX</b> platform — the inspection technology trusted by field teams nationwide.</div>
-    <div class="logos"><span class="lg"></span><span class="lg"></span><span class="lg"></span><span class="lg"></span></div>
+    <div class="logos">
+      <img src="logos/bankunited-color.png" alt="BankUnited" height="26" />
+      <img src="logos/iti-color.png" alt="ITI International" height="26" />
+      <img src="logos/acumen-color.webp" alt="Acumen" height="26" />
+      <img src="logos/corpac-color.png" alt="Corpac Steel" height="26" />
+      <img src="logos/fox-claims-color.png" alt="Fox Claims" height="26" />
+      <img src="logos/chemoil-color.png" alt="Chemoil" height="26" />
+    </div>
   </div>
 </section>
 
@@ -455,40 +463,27 @@
   </div>
 </section>
 
-<!-- BLOG PREVIEW · HIDDEN FOR NOW.
-     Remove the `hidden` (and aria-hidden) attribute on the <section> to reveal it once related
-     blog posts exist. The three cards are placeholders to be swapped for real related articles;
-     links currently point to the blog index. Aesthetics mirror BlogPreview.tsx on the service pages. -->
-<section class="section" style="background:var(--muted)" id="blog" hidden aria-hidden="true">
+<!-- BLOG PREVIEW · visible. The grid shows 3 RANDOM VLX blog posts (client-side shuffle in the
+     script below) — a placeholder pool for now, to be replaced with curated related posts later.
+     The 3 hard-coded cards are the no-JS fallback. Aesthetics mirror BlogPreview.tsx (service pages). -->
+<section class="section" style="background:var(--muted);border-top:1px solid var(--line)" id="blog">
   <div class="wrap">
     <div class="blog-head">
       <h2>Latest from the <span class="accent">VLX Blog</span></h2>
       <a class="viewall" href="https://vlx.ai/blog/">View All Posts →</a>
     </div>
-    <div class="blog-grid">
-      <a class="post" href="https://vlx.ai/blog/">
+    <div class="blog-grid" id="blogGrid">
+      <a class="post" href="https://vlx.ai/checklists/home-safety-inspection-checklist/">
         <div class="cover" style="background:linear-gradient(135deg,#1E293B,#334155)"></div>
-        <div class="pbody">
-          <span class="pcat">Grow your business</span>
-          <h3>How to start a home inspection business in 2026</h3>
-          <span class="pdate">Coming soon</span>
-        </div>
+        <div class="pbody"><span class="pcat">Checklists</span><h3>Home Safety Inspection Checklist to Determine if an Elderly Person Can Live at Home</h3><span class="pdate">Read article →</span></div>
       </a>
-      <a class="post" href="https://vlx.ai/blog/">
+      <a class="post" href="https://vlx.ai/blog/quality-assurance-process-with-advanced-digital-inspection/">
         <div class="cover" style="background:linear-gradient(135deg,#FFF1EC,#FFCDB8)"></div>
-        <div class="pbody">
-          <span class="pcat">Compliance</span>
-          <h3>Wind mitigation vs. 4-point inspection: what Florida clients need</h3>
-          <span class="pdate">Coming soon</span>
-        </div>
+        <div class="pbody"><span class="pcat">Industry Trends</span><h3>Digital Inspection Software for a Faster, Smarter QA Process</h3><span class="pdate">Read article →</span></div>
       </a>
-      <a class="post" href="https://vlx.ai/blog/">
+      <a class="post" href="https://vlx.ai/blog/7-modern-inspection-methods-that-boost-efficiency-save-costs/">
         <div class="cover" style="background:linear-gradient(135deg,#E3ECF2,#CFE0EA)"></div>
-        <div class="pbody">
-          <span class="pcat">Software</span>
-          <h3>Choosing home inspection software: a buyer&rsquo;s checklist</h3>
-          <span class="pdate">Coming soon</span>
-        </div>
+        <div class="pbody"><span class="pcat">Industry Trends</span><h3>Modern Inspection Methods: 7 Proven Ways to Boost Team Efficiency</h3><span class="pdate">Read article →</span></div>
       </a>
     </div>
   </div>
@@ -574,6 +569,38 @@
   track.addEventListener('pointermove',e=>{if(!down)return;track.scrollLeft=sl-(e.pageX-sx);});
   const wipe=document.getElementById('wipe'),ctl=document.getElementById('wipeCtl');
   ctl.addEventListener('input',()=>{wipe.style.setProperty('--wipe',ctl.value+'%');});
+
+  // Blog preview — show 3 RANDOM posts from a pool of real VLX blog posts (placeholder for now)
+  const BLOG_POOL=[
+    {t:"What Is the Difference Between QMS and eQMS Software?",u:"https://vlx.ai/blog/difference-qms-eqms/",c:"Industry Trends"},
+    {t:"The Definitive Guide to the Lean Manufacturing Gemba Walk",u:"https://vlx.ai/forms/lean-manufacturing-gemba-walk/",c:"Forms"},
+    {t:"Audit Fraud Exposed: Why Real-Time Inspections Matter Most Now",u:"https://vlx.ai/blog/why-audits-failed-without-real-time-inspections/",c:"Industry Trends"},
+    {t:"Collateral Monitoring: See Risk Before It Spreads With VLX CCIA",u:"https://vlx.ai/blog/seeing-risk-before-it-spreads-vlx-continuous-collateral-integrity-analysis/",c:"Industry Trends"},
+    {t:"Visualogyx Rebrands as VLX: A New Standard for Digital Inspections",u:"https://vlx.ai/blog/visualogyx-rebrands-as-vlx-establishing-a-global-standard-for-digital-inspections-and-compliance/",c:"Perspectives"},
+    {t:"Logistics Inspection Software for Modern Supply Chains Today",u:"https://vlx.ai/blog/why-supply-chain-management-software-is-essential-for-modern-logistics/",c:"Industry Trends"},
+    {t:"How to Write an Incident Report: A Complete Guide with Templates & Best Practices",u:"https://vlx.ai/reports/how-to-write-an-incident-report/",c:"Reports"},
+    {t:"Packaging Inspection: Why It Is Crucial for Quality and Compliance",u:"https://vlx.ai/blog/regular-packaging-inspection-for-quality-control-and-compliance/",c:"Industry Trends"},
+    {t:"Home Safety Inspection Checklist to Determine if an Elderly Person Can Live at Home",u:"https://vlx.ai/checklists/home-safety-inspection-checklist/",c:"Checklists"},
+    {t:"Modern Inspection Methods: 7 Proven Ways to Boost Team Efficiency",u:"https://vlx.ai/blog/7-modern-inspection-methods-that-boost-efficiency-save-costs/",c:"Industry Trends"},
+    {t:"Digital Inspection Software for a Faster, Smarter QA Process",u:"https://vlx.ai/blog/quality-assurance-process-with-advanced-digital-inspection/",c:"Industry Trends"},
+    {t:"Home Safety Checklist to Determine if an Elderly Person Can Live at Home",u:"https://vlx.ai/checklists/home-safety-checklist-for-seniors/",c:"Checklists"}
+  ];
+  const BLOG_COVERS=['linear-gradient(135deg,#1E293B,#334155)','linear-gradient(135deg,#FFF1EC,#FFCDB8)','linear-gradient(135deg,#E3ECF2,#CFE0EA)'];
+  const bgrid=document.getElementById('blogGrid');
+  if(bgrid){
+    const a=BLOG_POOL.slice();
+    for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+    bgrid.innerHTML='';
+    a.slice(0,3).forEach((p,idx)=>{
+      const link=document.createElement('a');link.className='post';link.href=p.u;
+      const cov=document.createElement('div');cov.className='cover';cov.style.background=BLOG_COVERS[idx%3];
+      const body=document.createElement('div');body.className='pbody';
+      const cat=document.createElement('span');cat.className='pcat';cat.textContent=p.c;
+      const h=document.createElement('h3');h.textContent=p.t;
+      const d=document.createElement('span');d.className='pdate';d.textContent='Read article →';
+      body.append(cat,h,d);link.append(cov,body);bgrid.append(link);
+    });
+  }
 </script>
 </body>
 </html>
