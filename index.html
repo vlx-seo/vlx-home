@@ -164,16 +164,23 @@
   footer .cols b{color:#fff;display:block;margin-bottom:12px;font-size:13px}
   footer .cols a{display:block;margin-bottom:8px}
   footer .note{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:#64748B}
+  .ilink{color:var(--brand-darker);text-decoration:underline;text-underline-offset:2px;font-weight:500}
+  .ilink:hover{color:var(--brand-dark)}
+  .dark .ilink{color:var(--brand-light)}
+  .related{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+  .related a{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;text-decoration:none;color:var(--text);font-weight:600;font-size:15.5px;transition:.18s}
+  .related a:hover{border-color:var(--brand);color:var(--brand-darker);transform:translateY(-2px);box-shadow:var(--shadow)}
+  .related a span{display:block;margin-top:5px;font-size:13px;font-weight:400;color:var(--text-2)}
   .reveal{opacity:0;transform:translateY(14px);transition:.6s ease}.reveal.in{opacity:1;transform:none}
   @media(max-width:920px){
     .wrap{padding:0 24px}
     .nav-links{display:none}
     .hero-grid,.wipe-grid,.price-grid{grid-template-columns:1fr}
-    .g2,.g3,.g4,.stats,.integ,.svc{grid-template-columns:1fr 1fr}
+    .g2,.g3,.g4,.stats,.integ,.svc,.related{grid-template-columns:1fr 1fr}
     .section{padding:56px 0}.report{transform:none;margin-top:26px}
     footer .cols{grid-template-columns:1fr 1fr}
   }
-  @media(max-width:560px){.g2,.g3,.g4,.stats,.integ,.svc{grid-template-columns:1fr}.nav-cta .btn-ghost{display:none}}
+  @media(max-width:560px){.g2,.g3,.g4,.stats,.integ,.svc,.related{grid-template-columns:1fr}.nav-cta .btn-ghost{display:none}}
 </style>
 </head>
 <body>
@@ -262,7 +269,7 @@
       <div class="card reveal"><div class="ico">📄</div><h3>Branded report engine</h3><p>Build your inspection report from a template in your own format — prioritized findings and annotated photos, no office rework.</p></div>
       <div class="card reveal"><div class="ico">✍️</div><h3>Delivery &amp; e-signature</h3><p>Send a secure client link with a digital signature and receipt — you see who opened the report and when.</p></div>
       <div class="card reveal"><div class="ico">💳</div><h3>Invoicing &amp; follow-up</h3><p>Inspection invoicing software ties the invoice to the job, tracks payment status and sends reminders automatically.</p></div>
-      <div class="card reveal"><div class="ico">🔒</div><h3>Verified evidence (KYPiT)</h3><p>KYPiT photo authentication software validates every capture, so the evidence behind each finding holds up.</p></div>
+      <div class="card reveal"><div class="ico">🔒</div><h3>Verified evidence (KYPiT)</h3><p><a class="ilink" href="https://vlx.ai/digital-inspections-software/app/kypit/">KYPiT</a> photo authentication software validates every capture, so the evidence behind each finding holds up.</p></div>
     </div>
   </div>
 </section>
@@ -321,7 +328,7 @@
       <div>
         <div class="eyebrow">The deliverable</div>
         <h2 style="margin-top:10px">Home inspection reports clients actually read</h2>
-        <p class="lead">VLX Home is home inspection report software that turns field captures into a clean inspection report format — a plain summary of findings, state-required report forms and a repair cost estimate your client understands. Drag the slider to compare.</p>
+        <p class="lead">VLX Home is <a class="ilink" href="https://vlx.ai/digital-inspections-software/home-inspectors/">home inspection report software</a> that turns field captures into a clean inspection report format — a plain summary of findings, state-required report forms and a repair cost estimate your client understands. Drag the slider to compare.</p>
         <a class="btn btn-ghost" href="https://vlx.ai/demo/" style="margin-top:20px">See the full example</a>
       </div>
       <div>
@@ -360,7 +367,7 @@
       <div class="stat reveal"><span class="v">300M+</span><span class="l">data points captured</span></div>
       <div class="stat reveal"><span class="v">$100M+</span><span class="l">in assets validated</span></div>
     </div>
-    <p class="supp">VLX Home runs on the same field-inspection platform, evidence validation (KYPiT) and infrastructure that VLX teams already rely on.</p>
+    <p class="supp">VLX Home runs on the same <a class="ilink" href="https://vlx.ai/digital-inspections-software/">digital inspection software</a> platform, evidence validation (KYPiT) and infrastructure that VLX teams already rely on.</p>
   </div>
 </section>
 
@@ -378,7 +385,7 @@
       <div class="i reveal"><b>Accounting sync</b><span>Push invoices and payments to your accounting so the books stay reconciled.</span></div>
       <div class="i reveal"><b>Your website</b><span>Embed the booking widget on your existing site — clients book without a phone call.</span></div>
       <div class="i reveal"><b>KYPiT evidence</b><span>Passive AI photo authentication flags suspicious captures so your evidence holds up.</span></div>
-      <div class="i reveal"><b>REST API &amp; webhooks</b><span>A public REST API, API keys and webhooks connect VLX Home to the rest of your stack.</span></div>
+      <div class="i reveal"><b>REST API &amp; webhooks</b><span>A public <a class="ilink" href="https://vlx.ai/developers/">REST API</a>, API keys and webhooks connect VLX Home to the rest of your stack.</span></div>
     </div>
   </div>
 </section>
@@ -425,6 +432,24 @@
   </div>
 </section>
 
+<!-- Related · interlinking -->
+<section class="section" style="background:var(--muted)">
+  <div class="wrap">
+    <div class="center" style="max-width:720px;margin:0 auto">
+      <div class="eyebrow">Explore the VLX platform</div>
+      <h2 style="margin-top:10px">More from VLX inspection software</h2>
+    </div>
+    <div class="related">
+      <a href="https://vlx.ai/digital-inspections-software/">Digital inspection software<span>The VLX platform overview</span></a>
+      <a href="https://vlx.ai/digital-inspections-software/home-inspectors/">Home inspection report software<span>Fast on-site reports &amp; custom formats</span></a>
+      <a href="https://vlx.ai/digital-inspections-software/app/kypit/">KYPiT<span>AI photo fraud detection for your evidence</span></a>
+      <a href="https://vlx.ai/digital-inspections-software/real-estate/">For real estate agents<span>Move-in &amp; property walkthroughs</span></a>
+      <a href="https://vlx.ai/digital-inspections-software/inspection-companies/">For inspection companies<span>Scheduling &amp; team management</span></a>
+      <a href="https://vlx.ai/developers/">Developers &amp; API<span>REST API, keys &amp; webhooks</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- S9 · final CTA -->
 <section class="final" id="demo">
   <div class="wrap">
@@ -460,7 +485,8 @@
       <div>
         <b>VLX</b>
         <a href="https://vlx.ai/digital-inspections-software/">Digital inspection software</a>
-        <a href="https://vlx.ai/digital-inspections-software/home-inspectors/">Home inspection software</a>
+        <a href="https://vlx.ai/digital-inspections-software/home-inspectors/">Home inspection report software</a>
+        <a href="https://vlx.ai/digital-inspections-software/app/kypit/">KYPiT · photo authentication</a>
         <a href="https://vlx.ai/demo/">Book a demo</a>
       </div>
     </div>
