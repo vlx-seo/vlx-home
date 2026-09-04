@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<!-- Canonical target route (production): /digital-inspections-software/home-inspection/ - decidida por Lau el 2026-09-04.
-     La sectorial /digital-inspections-software/home-inspectors/ se 301 A ESTA pagina, asi que NO se enlaza desde aca (seria auto-referencia via redirect). -->
+<!-- Canonical target route (production): /digital-inspections-software/home/ - decidida por Lau el 2026-09-04.
+     El hub ya trae "inspections-software", asi que el ultimo segmento no lo repite.
+     /home/ redirige aca con un 307 para la pauta (temporal a proposito: un destino de campana
+     tiene que poder cambiar, y un 308 se queda cacheado en el navegador para siempre).
+     La sectorial /digital-inspections-software/home-inspectors/ se 301 A ESTA pagina, asi que NO
+     se enlaza desde aca (seria auto-referencia via redirect). -->
 <title>Home Inspection Software — Run Your Whole Business | VLX Home</title>
 <meta name="description" content="Home inspection software that runs your whole business — booking, scheduling, offline inspections, branded reports, payments and every inspection type. Start a free trial." />
 <meta name="robots" content="noindex, nofollow" />
