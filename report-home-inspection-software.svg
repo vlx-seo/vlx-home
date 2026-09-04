@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 380" width="460" height="380" role="img" aria-label="Home inspection software report from VLX Home">
+  <defs>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#0f172a" flood-opacity="0.30"/>
+    </filter>
+    <linearGradient id="photo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E3ECF2"/>
+      <stop offset="1" stop-color="#CFE0EA"/>
+    </linearGradient>
+    <clipPath id="card"><rect x="18" y="14" width="424" height="352" rx="14"/></clipPath>
+  </defs>
+  <g font-family="Arial, Helvetica, sans-serif" filter="url(#shadow)">
+    <g clip-path="url(#card)">
+      <rect x="18" y="14" width="424" height="352" fill="#ffffff"/>
+      <!-- header -->
+      <rect x="18" y="14" width="424" height="52" fill="#C63A0A"/>
+      <text x="34" y="46" font-size="16" font-weight="700" fill="#ffffff">Home Inspection Report</text>
+      <text x="426" y="44" text-anchor="end" font-size="11" fill="#ffd9cc">VLX Home &#183; 142 Oak Street</text>
+      <!-- rows -->
+      <text x="34" y="100" font-size="13" fill="#546E7A">Property type</text>
+      <text x="426" y="100" text-anchor="end" font-size="13" font-weight="700" fill="#263238">Single-family</text>
+      <line x1="34" y1="114" x2="426" y2="114" stroke="#E5E7EB" stroke-dasharray="3 3"/>
+      <text x="34" y="136" font-size="13" fill="#546E7A">Inspector</text>
+      <text x="426" y="136" text-anchor="end" font-size="13" font-weight="700" fill="#263238">J. Boyd</text>
+      <line x1="34" y1="150" x2="426" y2="150" stroke="#E5E7EB" stroke-dasharray="3 3"/>
+      <text x="34" y="172" font-size="13" fill="#546E7A">Roof</text>
+      <text x="426" y="172" text-anchor="end" font-size="13" font-weight="700" fill="#263238">Attention</text>
+      <line x1="34" y1="186" x2="426" y2="186" stroke="#E5E7EB" stroke-dasharray="3 3"/>
+      <text x="34" y="208" font-size="13" fill="#546E7A">Electrical</text>
+      <text x="426" y="208" text-anchor="end" font-size="13" font-weight="700" fill="#263238">Pass</text>
+      <!-- flag -->
+      <rect x="34" y="236" width="392" height="36" rx="8" fill="#FDECEA"/>
+      <circle cx="50" cy="254" r="3.5" fill="#B0341B"/>
+      <text x="62" y="258" font-size="12" fill="#B0341B">Roof moisture &#183; High priority &#183; est. repair $1,800</text>
+      <!-- photo -->
+      <rect x="34" y="286" width="392" height="64" rx="8" fill="url(#photo)"/>
+      <text x="230" y="322" text-anchor="middle" font-size="11" fill="#64757F">Annotated, GPS-stamped photo</text>
+    </g>
+  </g>
+</svg>
