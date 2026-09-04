@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 110" role="img" aria-label="Annotated roof photo showing moisture on the NW slope">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DCEBF5"/><stop offset="1" stop-color="#C2D8EA"/>
+    </linearGradient>
+    <linearGradient id="shingle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8C959D"/><stop offset="1" stop-color="#69727A"/>
+    </linearGradient>
+  </defs>
+  <rect width="380" height="110" fill="url(#sky)"/>
+  <!-- roof plane -->
+  <path d="M0 44 L380 18 L380 110 L0 110 Z" fill="url(#shingle)"/>
+  <!-- shingle rows -->
+  <g stroke="#565f67" stroke-width="1.1" opacity=".45">
+    <path d="M0 60 L380 36"/><path d="M0 76 L380 55"/><path d="M0 92 L380 74"/>
+  </g>
+  <!-- shingle tabs -->
+  <g fill="#565f67" opacity=".3">
+    <rect x="30" y="46" width="1.6" height="13"/><rect x="90" y="42" width="1.6" height="13"/><rect x="150" y="38" width="1.6" height="13"/><rect x="210" y="34" width="1.6" height="13"/><rect x="270" y="30" width="1.6" height="13"/><rect x="330" y="26" width="1.6" height="13"/>
+    <rect x="60" y="63" width="1.6" height="12"/><rect x="120" y="59" width="1.6" height="12"/><rect x="180" y="55" width="1.6" height="12"/><rect x="240" y="51" width="1.6" height="12"/><rect x="300" y="47" width="1.6" height="12"/>
+  </g>
+  <!-- moisture patch -->
+  <ellipse cx="146" cy="76" rx="48" ry="21" fill="#39434D" opacity=".5"/>
+  <ellipse cx="146" cy="76" rx="30" ry="12" fill="#28313A" opacity=".5"/>
+  <!-- annotation ring + callout -->
+  <circle cx="146" cy="76" r="30" fill="none" stroke="#FF5722" stroke-width="3"/>
+  <path d="M170 61 L206 40" stroke="#FF5722" stroke-width="2" stroke-linecap="round"/>
+  <rect x="205" y="28" width="104" height="22" rx="11" fill="#C63A0A"/>
+  <text x="257" y="43" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#ffffff">Moisture &#183; High</text>
+</svg>

@@ -114,7 +114,7 @@
   .track-hint{font-size:12.5px;color:var(--text-3);margin-left:auto}
   /* wipe */
   .wipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:8px}
-  .wipe{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:var(--shadow);aspect-ratio:4/3}
+  .wipe{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:var(--shadow);height:340px}
   .wipe .pane{position:absolute;inset:0;padding:22px;display:flex;flex-direction:column}
   .wipe .after{background:linear-gradient(135deg,#fff,#FFF7F4)}
   .wipe .before{background:#F1F5F8;clip-path:inset(0 0 0 var(--wipe,54%))}
@@ -123,14 +123,17 @@
   .wipe .before .tg{background:#E2E8F0;color:var(--text-2)}
   .wipe .ttl{font-weight:700;font-size:15px;color:var(--text);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
   .wipe .sev{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;background:#FDECEA;color:#B0341B;padding:3px 8px;border-radius:6px}
-  .wipe .wphoto{height:58px;border-radius:8px;background:linear-gradient(135deg,#E3ECF2,#CFE0EA);display:flex;align-items:center;justify-content:center;color:var(--text-3);font-size:11px;margin-top:12px}
+  .wipe .wphoto{height:84px;border-radius:8px;overflow:hidden;margin-top:12px}
+  .wipe .wphoto img{width:100%;height:100%;object-fit:cover;display:block}
   .wipe .wrows{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin-top:12px}
   .wipe .wrows div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--line);padding-bottom:5px;font-size:12px}
   .wipe .wrows span{color:var(--text-3)}
   .wipe .wrows b{color:var(--text)}
   .wipe .wdesc{font-size:12px;color:var(--text-2);margin-top:12px;line-height:1.45}
-  .wipe .bphoto{margin-top:12px;height:56px;border-radius:8px;border:1px dashed #C3CDD6;background:#EAEFF3;display:flex;align-items:center;justify-content:center;color:var(--text-3);font-size:11px;transform:rotate(-1.2deg)}
-  .wipe .bnotes{list-style:none;margin:16px 0 0;padding:0;font-family:'Caveat',cursive;font-size:19px;line-height:1.55;color:#607080}
+  .wipe .bphoto{position:relative;margin-top:12px;height:84px;border-radius:8px;overflow:hidden;transform:rotate(-1.2deg);border:1px solid #D6DEE5}
+  .wipe .bphoto img{width:100%;height:100%;object-fit:cover;display:block}
+  .wipe .bphoto .cap{position:absolute;left:8px;bottom:6px;font-size:10px;color:#fff;background:rgba(15,23,42,.5);padding:2px 7px;border-radius:4px;font-style:italic}
+  .wipe .bnotes{list-style:none;margin:14px 0 0;padding:0;font-family:'Caveat',cursive;font-size:18px;line-height:1.4;color:#607080}
   .wipe .bnotes li{position:relative;padding-left:18px}
   .wipe .bnotes li::before{content:"–";position:absolute;left:0;color:#9AA7B2}
   .wipe .bnotes li.strike{text-decoration:line-through;opacity:.55}
@@ -371,7 +374,7 @@
           <div class="pane after">
             <span class="tg">With VLX Home</span>
             <div class="ttl">Roof moisture <span class="sev">High priority</span></div>
-            <div class="wphoto">📷 Annotated photo · NW roof slope</div>
+            <div class="wphoto"><img src="img/annotated-roof.svg" alt="Annotated photo of roof moisture on the NW slope" /></div>
             <div class="wrows">
               <div><span>Location</span><b>NW slope</b></div>
               <div><span>Severity</span><b>High</b></div>
@@ -384,7 +387,7 @@
           <div class="pane before">
             <span class="tg">By hand, as today</span>
             <div class="ttl">Roof moisture</div>
-            <div class="bphoto">Loose phone photo — which slope?</div>
+            <div class="bphoto"><img src="img/loose-roof-photo.svg" alt="Loose, blurry phone photo of a roof" /><span class="cap">which slope?</span></div>
             <ul class="bnotes">
               <li>wet spot on roof — NE? NW?</li>
               <li class="strike">measure the area</li>
