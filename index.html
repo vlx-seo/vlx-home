@@ -80,13 +80,14 @@
   .report .rflag{background:#FDECEA;color:#B0341B;border-radius:8px;padding:9px 11px;font-size:12.5px;margin-top:12px}
   .report .rphoto{height:76px;border-radius:8px;background:linear-gradient(135deg,#E3ECF2,#CFE0EA);margin-top:12px;display:flex;align-items:center;justify-content:center;color:var(--text-3);font-size:11px}
   /* trust strip */
-  .proof{background:var(--muted);border-bottom:1px solid var(--line)}
-  .proof .row{display:flex;align-items:center;gap:30px;flex-wrap:wrap;justify-content:space-between;padding:26px 0}
-  .proof .tl{font-size:14px;color:var(--text-3);font-weight:500;max-width:320px}
-  .proof .tl b{color:var(--text-2)}
-  .proof .logos{display:flex;gap:30px;flex-wrap:wrap;align-items:center}
-  .proof .logos img{height:26px;width:auto;object-fit:contain;filter:grayscale(100%);opacity:.6;transition:.2s}
-  .proof .logos img:hover{filter:grayscale(0);opacity:1}
+  .logobar{background:#fff;border-bottom:1px solid var(--line);padding:52px 0}
+  .logobar .tb{text-align:center;font-size:12px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-3);margin-bottom:32px}
+  .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
+  .marquee .track{display:flex;align-items:center;gap:64px;width:max-content;animation:vhscroll 48s linear infinite}
+  .marquee:hover .track{animation-play-state:paused}
+  .marquee img{height:34px;width:auto;max-width:170px;object-fit:contain;flex:0 0 auto;-webkit-user-select:none;user-select:none}
+  @keyframes vhscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;gap:40px 48px}}
   .grid{display:grid;gap:22px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
   .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.2s}
   .card:hover{box-shadow:var(--shadow);border-color:#D8DEE4}
@@ -114,17 +115,25 @@
   /* wipe */
   .wipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:8px}
   .wipe{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:var(--shadow);aspect-ratio:4/3}
-  .wipe .pane{position:absolute;inset:0;padding:24px}
+  .wipe .pane{position:absolute;inset:0;padding:22px;display:flex;flex-direction:column}
   .wipe .after{background:linear-gradient(135deg,#fff,#FFF7F4)}
   .wipe .before{background:#F1F5F8;clip-path:inset(0 0 0 var(--wipe,54%))}
-  .wipe .tg{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:4px 9px;border-radius:6px;margin-bottom:12px}
+  .wipe .tg{align-self:flex-start;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:4px 9px;border-radius:6px;margin-bottom:12px}
   .wipe .after .tg{background:var(--brand-soft);color:var(--brand-darker)}
   .wipe .before .tg{background:#E2E8F0;color:var(--text-2)}
-  .wipe .ttl{font-weight:700;font-size:15px}
-  .wipe .ln{height:9px;border-radius:5px;background:#E7EDF1;margin-top:9px}
-  .wipe .ln.hot{background:var(--brand-soft);border:1px solid var(--brand-light);height:26px}
-  .wipe .meta{font-size:11px;color:var(--text-3);margin-top:12px;font-family:ui-monospace,monospace}
+  .wipe .ttl{font-weight:700;font-size:15px;color:var(--text);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .wipe .sev{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;background:#FDECEA;color:#B0341B;padding:3px 8px;border-radius:6px}
+  .wipe .wphoto{height:58px;border-radius:8px;background:linear-gradient(135deg,#E3ECF2,#CFE0EA);display:flex;align-items:center;justify-content:center;color:var(--text-3);font-size:11px;margin-top:12px}
+  .wipe .wrows{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin-top:12px}
+  .wipe .wrows div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--line);padding-bottom:5px;font-size:12px}
+  .wipe .wrows span{color:var(--text-3)}
+  .wipe .wrows b{color:var(--text)}
+  .wipe .wdesc{font-size:12px;color:var(--text-2);margin-top:12px;line-height:1.45}
+  .wipe .scrib{margin-top:12px;display:flex;flex-direction:column;gap:10px;opacity:.7}
+  .wipe .scrib i{height:8px;border-radius:5px;background:#DBE3EA;display:block}
+  .wipe .meta{font-size:11px;color:var(--text-3);margin-top:auto;padding-top:10px;font-family:ui-monospace,monospace}
   .wipe .divider{position:absolute;top:0;bottom:0;left:var(--wipe,54%);width:2px;background:var(--brand-darker);transform:translateX(-1px)}
+  .wipe .handle{position:absolute;top:50%;left:var(--wipe,54%);transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:#fff;border:2px solid var(--brand-darker);box-shadow:0 4px 12px rgba(38,50,56,.18);display:flex;align-items:center;justify-content:center;color:var(--brand-darker);font-size:14px;font-weight:700;pointer-events:none}
   .wipe-range{width:100%;margin-top:14px;accent-color:var(--brand-darker)}
   /* dark stats band */
   .dark{background:var(--dark);color:#fff}
@@ -254,16 +263,26 @@
 </section>
 
 <!-- S2 · trust strip -->
-<section class="proof">
-  <div class="wrap row">
-    <div class="tl">Built on the <b>VLX</b> platform — the inspection technology trusted by field teams nationwide.</div>
-    <div class="logos">
-      <img src="logos/bankunited-color.png" alt="BankUnited" height="26" />
-      <img src="logos/iti-color.png" alt="ITI International" height="26" />
-      <img src="logos/acumen-color.webp" alt="Acumen" height="26" />
-      <img src="logos/corpac-color.png" alt="Corpac Steel" height="26" />
-      <img src="logos/fox-claims-color.png" alt="Fox Claims" height="26" />
-      <img src="logos/chemoil-color.png" alt="Chemoil" height="26" />
+<section class="logobar">
+  <div class="wrap">
+    <p class="tb">Trusted by</p>
+    <div class="marquee">
+      <div class="track" id="logoTrack">
+        <img src="logos/bankunited-color.png" alt="BankUnited" />
+        <img src="logos/iti-color.png" alt="ITI International" />
+        <img src="logos/pipe-exchange-color.png" alt="Pipe Exchange" />
+        <img src="logos/chemoil-color.png" alt="Chemoil" />
+        <img src="logos/acumen-color.webp" alt="Acumen Real Estate" />
+        <img src="logos/tubacero-wordmark-color.png" alt="Tubacero" />
+        <img src="logos/tranzport-color.png" alt="Tranzport" />
+        <img src="logos/techsonic-color.png" alt="Tech Sonic" />
+        <img src="logos/lsp-services-color.png" alt="LSP Services" />
+        <img src="logos/corpac-color.png" alt="Corpac" />
+        <img src="logos/rentbutter-color.png" alt="Rentbutter" />
+        <img src="logos/steelex-color.png" alt="Steelex" />
+        <img src="logos/fox-claims-color.png" alt="Fox Claims" />
+        <img src="logos/piecsa-color.png" alt="Piecsa" />
+      </div>
     </div>
   </div>
 </section>
@@ -345,23 +364,30 @@
         <a class="btn btn-ghost" href="https://vlx.ai/demo/" style="margin-top:20px">See the full example</a>
       </div>
       <div>
-        <div class="wipe" id="wipe" style="--wipe:54%">
+        <div class="wipe" id="wipe" style="--wipe:56%">
           <div class="pane after">
             <span class="tg">With VLX Home</span>
-            <div class="ttl">Roof moisture · High priority</div>
-            <div class="ln hot"></div><div class="ln"></div><div class="ln" style="width:75%"></div>
-            <div class="ln hot" style="width:60%"></div><div class="ln" style="width:60%"></div>
-            <div class="meta">annotated photo + location + severity + cost · 4 min</div>
+            <div class="ttl">Roof moisture <span class="sev">High priority</span></div>
+            <div class="wphoto">📷 Annotated photo · NW roof slope</div>
+            <div class="wrows">
+              <div><span>Location</span><b>NW slope</b></div>
+              <div><span>Severity</span><b>High</b></div>
+              <div><span>Est. repair</span><b>$1,800</b></div>
+              <div><span>Report time</span><b>4 min</b></div>
+            </div>
+            <div class="wdesc">Active moisture at the flashing — recommend a licensed roofer before closing.</div>
+            <div class="meta">annotated photo + location + severity + cost</div>
           </div>
           <div class="pane before">
             <span class="tg">By hand, as today</span>
             <div class="ttl">Roof moisture</div>
-            <div class="ln" style="width:60%"></div><div class="ln" style="width:45%"></div>
+            <div class="scrib"><i style="width:72%"></i><i style="width:54%"></i><i style="width:64%"></i><i style="width:38%"></i></div>
             <div class="meta">notebook jottings + loose phone photos · 40 min of office work</div>
           </div>
           <div class="divider"></div>
+          <div class="handle">&harr;</div>
         </div>
-        <input type="range" class="wipe-range" id="wipeCtl" min="0" max="100" value="46" aria-label="Compare the handwritten report against the VLX Home report" />
+        <input type="range" class="wipe-range" id="wipeCtl" min="0" max="100" value="56" aria-label="Compare the handwritten report against the VLX Home report" />
       </div>
     </div>
   </div>
@@ -601,6 +627,10 @@
       body.append(cat,h,d);link.append(cov,body);bgrid.append(link);
     });
   }
+
+  // Logo marquee — duplicate the set so the infinite scroll loops seamlessly
+  const lt=document.getElementById('logoTrack');
+  if(lt){ [...lt.children].forEach(n=>{const c=n.cloneNode(true);c.setAttribute('aria-hidden','true');lt.appendChild(c);}); }
 </script>
 </body>
 </html>
