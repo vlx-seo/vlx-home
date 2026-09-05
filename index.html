@@ -63,6 +63,22 @@
   .nav-links a{font-size:15px;color:var(--text);font-weight:500;text-decoration:none}
   .nav-links a:hover{color:var(--brand-darker)}
   .nav-cta{display:flex;gap:12px;align-items:center}
+  /* GLOBAL VLX site header (mirrors vlx.ai) — sits above the product sub-header, like Zoho.com over Zoho CRM */
+  .site-header{background:#fff;border-bottom:1px solid var(--line)}
+  .site-nav{display:flex;align-items:center;height:58px;gap:24px}
+  .slogo{display:flex;align-items:center;gap:8px;text-decoration:none}
+  .slogo .mark{width:32px;height:22px}
+  .slogo .swm b{font-size:20px;font-weight:700;color:var(--text);letter-spacing:.5px}
+  .site-links{display:flex;gap:24px;align-items:center;margin-left:30px}
+  .site-links a{font-size:14.5px;color:var(--text);font-weight:500;text-decoration:none}
+  .site-links a:hover{color:var(--brand-darker)}
+  .site-cta{display:flex;gap:16px;align-items:center;margin-left:auto}
+  .slink{font-size:14.5px;color:var(--text);font-weight:500;text-decoration:none}
+  .slink:hover{color:var(--brand-darker)}
+  .btn-sm{padding:9px 20px;font-size:14.5px}
+  /* product sub-header = the VLX Home bar (the existing sticky <header>) */
+  .product-bar .wm em{font-style:normal;color:var(--brand)}
+  .product-tag{font-size:11px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:var(--brand-darker);background:var(--brand-soft);border-radius:6px;padding:3px 8px;margin-left:2px}
   .hero{background:var(--dark);color:#fff;position:relative;overflow:hidden}
   .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 420px at 78% -10%,rgba(255,87,34,.18),transparent 62%);pointer-events:none}
   .hero .wrap{position:relative;padding-top:26px;padding-bottom:66px}
@@ -272,7 +288,7 @@
   .prod .cat{display:block;margin-top:14px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--brand-darker)}
   @media(max-width:920px){
     .wrap{padding:0 24px}
-    .nav-links{display:none}
+    .nav-links,.site-links{display:none}
     .hero-grid,.wipe-grid,.price-grid,.spotlight{grid-template-columns:1fr}
     .g2,.g3,.g4,.stats,.integ,.svc,.related,.blog-grid,.roles,.pillars,.suite{grid-template-columns:1fr 1fr}
     .spotlight{padding:34px 26px}
@@ -286,14 +302,40 @@
 
 <div class="anno"><span class="new">PROPOSAL v4</span> VLX Home reordered to the <b>Zoho product-page structure</b> · one product in the VLX suite · noindex</div>
 
-<header>
+<!-- GLOBAL VLX site header (whole-site nav, mirrors vlx.ai) -->
+<div class="site-header">
+  <div class="wrap site-nav">
+    <a class="slogo" href="https://vlx.ai/" aria-label="VLX home">
+      <svg class="mark" viewBox="0 0 44 30" fill="none" aria-hidden="true">
+        <path d="M2 3 L13 27 L20 12" stroke="#FF5722" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24 27 L35 3 L42 27" stroke="#C63A0A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="swm"><b>vlx</b></span>
+    </a>
+    <nav class="site-links">
+      <a href="https://vlx.ai/product/">Product</a>
+      <a href="https://vlx.ai/digital-inspections-software/">Solutions</a>
+      <a href="https://vlx.ai/integrations/">Integrations</a>
+      <a href="https://vlx.ai/pricing/">Pricing</a>
+      <a href="https://vlx.ai/resources/">Resources</a>
+      <a href="https://vlx.ai/about-us/">Company</a>
+    </nav>
+    <div class="site-cta">
+      <a class="slink" href="https://app.vlx.ai/Login/">Login</a>
+      <a class="btn btn-primary btn-sm" href="https://app.vlx.ai/login/?plan=ProfessionalTrial">Get Started</a>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT sub-header = the VLX Home bar (sticky, like Zoho CRM's own header under Zoho.com) -->
+<header class="product-bar">
   <div class="wrap nav">
     <a class="logo" href="#" aria-label="VLX Home">
       <svg class="mark" viewBox="0 0 44 30" fill="none" aria-hidden="true">
         <path d="M2 3 L13 27 L20 12" stroke="#FF5722" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M24 27 L35 3 L42 27" stroke="#C63A0A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span class="wm"><b>vlx</b><span>VERIFY THEN TRUST</span></span>
+      <span class="wm"><b>vlx&nbsp;<em>Home</em></b><span>HOME INSPECTION SOFTWARE</span></span>
     </a>
     <nav class="nav-links">
       <a href="#kypit">Verified evidence</a>
