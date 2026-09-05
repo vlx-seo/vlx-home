@@ -79,6 +79,17 @@
   /* product sub-header = the VLX Home bar (the existing sticky <header>) */
   .product-bar .wm em{font-style:normal;color:var(--brand)}
   .product-tag{font-size:11px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:var(--brand-darker);background:var(--brand-soft);border-radius:6px;padding:3px 8px;margin-left:2px}
+  /* product sub-header: Inspection types dropdown (Zoho-style sub-services menu) */
+  .nav-drop{position:relative;display:inline-flex;align-items:center}
+  .nav-drop::after{content:"";position:absolute;top:100%;left:-12px;right:-12px;height:18px}
+  .nav-drop-t{display:inline-flex;align-items:center;gap:5px;cursor:pointer}
+  .nav-drop-t .caret{font-size:10px;color:var(--text-3);transition:transform .16s}
+  .nav-drop:hover .nav-drop-t .caret{transform:rotate(180deg)}
+  .nav-menu{position:absolute;top:100%;left:0;margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:8px;min-width:360px;display:grid;grid-template-columns:1fr 1fr;gap:2px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .16s,transform .16s,visibility .16s;z-index:60}
+  .nav-drop:hover .nav-menu,.nav-drop:focus-within .nav-menu{opacity:1;visibility:visible;transform:none}
+  .nav-menu a{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;font-size:13.5px;color:var(--text);white-space:nowrap}
+  .nav-menu a:hover{background:var(--brand-soft);color:var(--brand-darker)}
+  .nav-menu a .mi{font-size:15px;flex:0 0 auto}
   .hero{background:var(--dark);color:#fff;position:relative;overflow:hidden}
   .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 420px at 78% -10%,rgba(255,87,34,.18),transparent 62%);pointer-events:none}
   .hero .wrap{position:relative;padding-top:26px;padding-bottom:66px}
@@ -340,7 +351,21 @@
     <nav class="nav-links">
       <a href="#kypit">Verified evidence</a>
       <a href="#pillars">Features</a>
-      <a href="#types">Inspection types</a>
+      <div class="nav-drop">
+        <a href="#types" class="nav-drop-t">Inspection types <span class="caret">▾</span></a>
+        <div class="nav-menu">
+          <a href="#types"><span class="mi">🏠</span>Full home inspection</a>
+          <a href="#types"><span class="mi">🏚️</span>Roof inspection</a>
+          <a href="#types"><span class="mi">🌀</span>Wind mitigation</a>
+          <a href="#types"><span class="mi">4️⃣</span>4-point inspection</a>
+          <a href="#types"><span class="mi">☢️</span>Radon testing</a>
+          <a href="#types"><span class="mi">🦠</span>Mold inspection</a>
+          <a href="#types"><span class="mi">🚿</span>Sewer scope</a>
+          <a href="#types"><span class="mi">🏊</span>Pool &amp; spa</a>
+          <a href="#types"><span class="mi">🐜</span>Termite / WDO</a>
+          <a href="#types"><span class="mi">🏗️</span>New construction</a>
+        </div>
+      </div>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -676,20 +701,21 @@
         <span>Home inspection software — booking to payment for residential inspectors and inspection companies.</span>
         <span class="cat">Home inspection</span>
       </a>
-      <a class="prod" href="https://vlx.ai/digital-inspections-software/">
+      <div class="prod">
+        <span class="badge">Coming soon</span>
         <div class="pmark">✔️</div>
         <b>VLX Quality</b>
         <span>Quality &amp; compliance inspections for manufacturing, supply chain and field operations.</span>
         <span class="cat">Quality &amp; compliance</span>
-      </a>
-      <a class="prod" href="https://vlx.ai/digital-inspections-software/">
+      </div>
+      <div class="prod">
+        <span class="badge">Coming soon</span>
         <div class="pmark">📦</div>
         <b>VLX Inventory.ai</b>
         <span>Asset &amp; inventory verification with authenticated, on-site photo evidence.</span>
         <span class="cat">Inventory &amp; assets</span>
-      </a>
+      </div>
     </div>
-    <div class="center" style="margin-top:30px"><a class="btn btn-ghost" href="https://vlx.ai/digital-inspections-software/">See all VLX products →</a></div>
   </div>
 </section>
 
