@@ -231,20 +231,60 @@
   .post h3{font-size:18px;font-weight:600;line-height:1.35;color:var(--text);margin:8px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .post .pdate{display:block;margin-top:16px;font-size:14px;color:var(--text-3)}
   .reveal{opacity:0;transform:translateY(14px);transition:.6s ease}.reveal.in{opacity:1;transform:none}
+  /* Zoho-order: flagship spotlight (KYPiT), like Zoho's Zia block */
+  .spotlight{background:linear-gradient(135deg,#1E293B,#0F172A);color:#fff;border-radius:18px;padding:46px 48px;display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center;position:relative;overflow:hidden}
+  .spotlight::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 320px at 88% 0,rgba(255,87,34,.22),transparent 60%);pointer-events:none}
+  .spotlight>*{position:relative}
+  .spotlight h2{color:#fff}
+  .spotlight .lead{color:#B6C2CC}
+  .explore{display:inline-flex;align-items:center;gap:7px;color:var(--brand-darker);font-weight:600;font-size:15px;text-decoration:none;margin-top:16px;transition:gap .18s}
+  .explore:hover{gap:12px}
+  .spotlight .explore,.dark .explore,.on-dark .explore{color:var(--brand-light)}
+  .sp-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:22px}
+  .sp-card .row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;color:#CBD5E1}
+  .sp-card .row:last-child{border-bottom:0}
+  .sp-card .tick{flex:0 0 24px;height:24px;border-radius:50%;background:rgba(46,204,113,.16);color:#4ADE80;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+  .sp-card .row b{color:#fff;font-weight:600}
+  /* for everyone — roles */
+  .roles{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+  .role{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px}
+  .role .ri{font-size:22px;margin-bottom:10px}
+  .role b{display:block;font-size:15.5px;color:var(--text);margin-bottom:5px}
+  .role span{font-size:13.5px;color:var(--text-2)}
+  /* functional pillars (Zoho benefit blocks) */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
+  .pillar{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px;transition:.2s}
+  .pillar:hover{box-shadow:var(--shadow);border-color:#D8DEE4}
+  .pillar .pico{width:46px;height:46px;border-radius:11px;background:var(--brand-soft);color:var(--brand-darker);display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px}
+  .pillar h3{font-size:20px;font-weight:700;margin-bottom:8px}
+  .pillar p{color:var(--text-2);font-size:15px}
+  .pillar ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .pillar ul li{font-size:12.5px;color:var(--text);background:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+  /* product suite (Zoho "all products") */
+  .suite{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+  .prod{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;position:relative;transition:.2s;text-decoration:none;color:inherit;display:block}
+  .prod:hover{box-shadow:var(--shadow);transform:translateY(-2px);border-color:#D8DEE4}
+  .prod.current{border-color:var(--brand-darker);box-shadow:0 8px 24px rgba(198,58,10,.10)}
+  .prod .badge{position:absolute;top:18px;right:18px;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;background:var(--brand-soft);color:var(--brand-darker);padding:3px 9px;border-radius:999px}
+  .prod .pmark{font-size:24px;margin-bottom:12px}
+  .prod b{font-size:18px;color:var(--text);display:block;margin-bottom:6px}
+  .prod>span{font-size:14px;color:var(--text-2)}
+  .prod .cat{display:block;margin-top:14px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--brand-darker)}
   @media(max-width:920px){
     .wrap{padding:0 24px}
     .nav-links{display:none}
-    .hero-grid,.wipe-grid,.price-grid{grid-template-columns:1fr}
-    .g2,.g3,.g4,.stats,.integ,.svc,.related,.blog-grid{grid-template-columns:1fr 1fr}
+    .hero-grid,.wipe-grid,.price-grid,.spotlight{grid-template-columns:1fr}
+    .g2,.g3,.g4,.stats,.integ,.svc,.related,.blog-grid,.roles,.pillars,.suite{grid-template-columns:1fr 1fr}
+    .spotlight{padding:34px 26px}
     .section{padding:56px 0}.report,.report-img{transform:none;margin-top:26px}
     footer .cols{grid-template-columns:1fr 1fr}
   }
-  @media(max-width:560px){.g2,.g3,.g4,.stats,.integ,.svc,.related,.blog-grid{grid-template-columns:1fr}.nav-cta .btn-ghost{display:none}}
+  @media(max-width:560px){.g2,.g3,.g4,.stats,.integ,.svc,.related,.blog-grid,.roles,.pillars,.suite{grid-template-columns:1fr}.nav-cta .btn-ghost{display:none}}
 </style>
 </head>
 <body>
 
-<div class="anno"><span class="new">PREVIEW</span> VLX Home service page · wireframe v3 · target route <b>/digital-inspections-software/</b> · noindex</div>
+<div class="anno"><span class="new">PROPOSAL v4</span> VLX Home reordered to the <b>Zoho product-page structure</b> · one product in the VLX suite · noindex</div>
 
 <header>
   <div class="wrap nav">
@@ -256,9 +296,9 @@
       <span class="wm"><b>vlx</b><span>VERIFY THEN TRUST</span></span>
     </a>
     <nav class="nav-links">
-      <a href="#included">Features</a>
-      <a href="#services">Inspection types</a>
-      <a href="#job">How it works</a>
+      <a href="#kypit">Verified evidence</a>
+      <a href="#pillars">Features</a>
+      <a href="#types">Inspection types</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -275,7 +315,7 @@
     <div class="crumb"><a href="https://vlx.ai/">Home</a><span class="sep">›</span><a href="https://vlx.ai/digital-inspections-software/">Digital Inspection Software</a><span class="sep">›</span><span style="color:#CBD5E1">VLX Home</span></div>
     <div class="hero-grid">
       <div>
-        <div class="eyebrow">New service · VLX Home</div>
+        <div class="eyebrow">A VLX product · Home inspection</div>
         <h1>Home inspection software, <span class="accent">from booking to payment</span> &mdash; VLX Home</h1>
         <p class="sub">VLX Home is the home inspection software that runs your whole residential business — schedule the appointment, inspect offline in the field, deliver a branded report, collect the signature and get paid, across every inspection type you offer.</p>
         <p class="subkw"><b>Also covers:</b> home inspection business software · inspection scheduling software · offline inspection app · home inspection app · get paid faster</p>
@@ -300,7 +340,7 @@
 <!-- S2 · trust strip -->
 <section class="logobar">
   <div class="wrap">
-    <p class="tb">Trusted by</p>
+    <p class="tb">Trusted by inspection teams on the VLX platform · 25,000+ users</p>
     <div class="marquee">
       <div class="track" id="logoTrack">
         <img src="logos/bankunited-color.png" alt="BankUnited" />
@@ -322,30 +362,89 @@
   </div>
 </section>
 
-<!-- S3 · capabilities -->
-<section class="section" id="included">
+<!-- S3 · FLAGSHIP SPOTLIGHT (KYPiT) — Zoho's "Zia agents" slot: the headline differentiator right after proof -->
+<section class="section" id="kypit">
   <div class="wrap">
-    <div class="center" style="max-width:720px;margin:0 auto">
-      <div class="eyebrow">What's included</div>
-      <h2 style="margin-top:10px">Everything a home inspection business runs on</h2>
-      <p class="lead center">One service instead of a scheduler, a report tool, a payment app and a spreadsheet — with home inspection scheduling, inspection templates and verified evidence built in.</p>
-    </div>
-    <div class="grid g3" style="margin-top:36px">
-      <div class="card reveal"><div class="ico">📅</div><h3>Scheduling &amp; clients</h3><p>Home inspection scheduling with a client CRM, appointment confirmations and route planning — every job starts organized.</p></div>
-      <div class="card reveal"><div class="ico">📴</div><h3>Offline inspection app</h3><p>An offline inspection app — a full home inspection app with inspection templates and photo annotation that keeps working with no signal and syncs on return.</p></div>
-      <div class="card reveal"><div class="ico">📄</div><h3>Branded report engine</h3><p>Build your inspection report from a template in your own format — prioritized findings and annotated photos, no office rework.</p></div>
-      <div class="card reveal"><div class="ico">✍️</div><h3>Delivery &amp; e-signature</h3><p>Send a secure client link with a digital signature and receipt — you see who opened the report and when.</p></div>
-      <div class="card reveal"><div class="ico">💳</div><h3>Invoicing &amp; follow-up</h3><p>Inspection invoicing software ties the invoice to the job, tracks payment status and sends reminders automatically.</p></div>
-      <div class="card reveal"><div class="ico">🔒</div><h3>Verified evidence (KYPiT)</h3><p><a class="ilink" href="https://vlx.ai/digital-inspections-software/app/kypit/">KYPiT</a> photo authentication software validates every capture, so the evidence behind each finding holds up.</p></div>
+    <div class="spotlight">
+      <div>
+        <div class="eyebrow">The VLX difference</div>
+        <h2 style="margin-top:10px">Every finding is verified you-were-there — with KYPiT</h2>
+        <p class="lead">KYPiT is the evidence layer built into VLX Home: passive photo authentication that confirms each capture is real, on-site and untampered. So the annotated photo behind every finding — and the report you hand the buyer, agent or insurer — holds up to scrutiny.</p>
+        <a class="explore" href="https://vlx.ai/digital-inspections-software/app/kypit/">Explore verified evidence →</a>
+      </div>
+      <div class="sp-card">
+        <div class="row"><span class="tick">✓</span><div>Captured <b>on-site</b>, GPS &amp; time-stamped</div></div>
+        <div class="row"><span class="tick">✓</span><div>Checked for <b>tampering</b> before it enters the report</div></div>
+        <div class="row"><span class="tick">✓</span><div>Traceable <b>chain of evidence</b> per finding</div></div>
+        <div class="row"><span class="tick">✓</span><div>Stands up for <b>insurers, agents &amp; courts</b></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- NEW · sub-services / inspection types -->
-<section class="section" id="services" style="background:var(--muted)">
+<!-- S4 · FOR EVERYONE — Zoho's "CRM for Everyone" slot -->
+<section class="section" id="everyone" style="background:var(--muted)">
   <div class="wrap">
     <div class="center" style="max-width:740px;margin:0 auto">
-      <div class="eyebrow">One platform, every inspection</div>
+      <div class="eyebrow">Built for the whole job</div>
+      <h2 style="margin-top:10px">One home inspection software for everyone on the job</h2>
+      <p class="lead center">Front desk, inspector, back office and client all work in the same system — no rekeying, no lost photos, no second login. Everyone watches one job move from booking to paid.</p>
+    </div>
+    <div class="roles">
+      <div class="role reveal"><div class="ri">📞</div><b>Front desk</b><span>Takes the booking, confirms the appointment and assigns the inspector.</span></div>
+      <div class="role reveal"><div class="ri">🔦</div><b>Inspector</b><span>Captures the inspection offline in the field — photos, notes and signatures.</span></div>
+      <div class="role reveal"><div class="ri">🗂️</div><b>Back office</b><span>Sends the report, invoices the job and tracks who has paid.</span></div>
+      <div class="role reveal"><div class="ri">🏡</div><b>The client</b><span>Gets a branded report, signs it and pays from one secure link.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- S5 · FUNCTIONAL PILLARS — Zoho's benefit blocks (title + benefit + Explore link), grouped by job -->
+<section class="section" id="pillars">
+  <div class="wrap">
+    <div class="center" style="max-width:720px;margin:0 auto">
+      <div class="eyebrow">What VLX Home does</div>
+      <h2 style="margin-top:10px">Everything a home inspection business runs on</h2>
+      <p class="lead center">Four jobs, one platform — instead of a scheduler, a field app, a report tool and a payment app stitched together with a spreadsheet.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="pico">📅</div>
+        <h3>Schedule &amp; book</h3>
+        <p>Home inspection scheduling with online booking, a client CRM, automatic confirmations and route planning — every job starts organized.</p>
+        <ul><li>Online booking</li><li>Client CRM</li><li>Route planning</li><li>Reminders</li></ul>
+        <a class="explore" href="#job">Explore scheduling →</a>
+      </div>
+      <div class="pillar reveal">
+        <div class="pico">📴</div>
+        <h3>Inspect offline in the field</h3>
+        <p>A full offline inspection app with inspection templates, GPS-stamped photo annotation and voice-to-text — it keeps working with no signal and syncs on return.</p>
+        <ul><li>Offline app</li><li>Templates</li><li>Photo annotation</li><li>Voice notes</li></ul>
+        <a class="explore" href="#job">Explore the field app →</a>
+      </div>
+      <div class="pillar reveal">
+        <div class="pico">📄</div>
+        <h3>Report &amp; deliver</h3>
+        <p>Build your branded inspection report from what you captured — prioritized findings, annotated photos, state-required forms, e-signature and same-day delivery.</p>
+        <ul><li>Branded reports</li><li>State forms</li><li>E-signature</li><li>Same-day delivery</li></ul>
+        <a class="explore" href="https://vlx.ai/digital-inspections-software/home-inspectors/">Explore reporting →</a>
+      </div>
+      <div class="pillar reveal">
+        <div class="pico">💳</div>
+        <h3>Get paid</h3>
+        <p>Inspection invoicing tied to the job — collect a deposit at booking, take card and ACH on delivery, and let automatic reminders chase what's still owed.</p>
+        <ul><li>Invoicing</li><li>Deposits</li><li>Card &amp; ACH</li><li>Auto reminders</li></ul>
+        <a class="explore" href="#pricing">Explore payments →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S6 · CAPABILITIES GRID (inspection types) — Zoho's capabilities grid + 360° view + pricing CTA -->
+<section class="section" id="types" style="background:var(--muted)">
+  <div class="wrap">
+    <div class="center" style="max-width:740px;margin:0 auto">
+      <div class="eyebrow">One platform, every inspection · a 360° view</div>
       <h2 style="margin-top:10px">One home inspection software for every service you offer</h2>
       <p class="lead center">Run your full-home inspections and every ancillary service from the same platform — each with its own template, report format and state-required forms. No second tool, no second login.</p>
     </div>
@@ -361,7 +460,8 @@
       <div class="s reveal"><div class="si">🐜</div><div><b>Termite / WDO</b><span>Coordinate termite and wood-destroying-organism inspections within the same job.</span></div></div>
       <div class="s reveal"><div class="si">🏗️</div><div><b>New construction &amp; pre-purchase</b><span>New-construction and pre-purchase inspections, from phase checks to final walkthrough.</span></div></div>
     </div>
-    <p class="lead center" style="margin:26px auto 0;font-size:15px;color:var(--text-3)">Each inspection type carries its own pricing, add-ons and report format — so clients book the right service and you deliver the right form every time.</p>
+    <p class="lead center" style="margin:26px auto 0;font-size:15px;color:var(--text-3)">Each inspection type carries its own pricing, add-ons and report format — so clients book the right service and you deliver the right form every time. Everything a home inspection business needs, in one 360° view.</p>
+    <div class="center" style="margin-top:26px"><a class="btn btn-primary" href="#pricing">See pricing →</a></div>
   </div>
 </section>
 
@@ -518,8 +618,41 @@
   </div>
 </section>
 
-<!-- Related · interlinking -->
-<section class="section" style="background:var(--muted)">
+<!-- S11 · PRODUCT SUITE — Zoho's "all products" slot: VLX Home is one product in the VLX family -->
+<section class="section" id="suite" style="background:var(--muted)">
+  <div class="wrap">
+    <div class="center" style="max-width:740px;margin:0 auto">
+      <div class="eyebrow">The VLX product family</div>
+      <h2 style="margin-top:10px">VLX Home is one of the VLX products</h2>
+      <p class="lead center">VLX Home runs residential inspections. It shares the same platform, the same evidence layer (KYPiT) and one account with the rest of the VLX products — so you can turn on another as your business grows, without a new tool or a new login.</p>
+    </div>
+    <div class="suite">
+      <a class="prod current" href="#" aria-current="page">
+        <span class="badge">You're here</span>
+        <div class="pmark">🏠</div>
+        <b>VLX Home</b>
+        <span>Home inspection software — booking to payment for residential inspectors and inspection companies.</span>
+        <span class="cat">Home inspection</span>
+      </a>
+      <a class="prod" href="https://vlx.ai/digital-inspections-software/">
+        <div class="pmark">✔️</div>
+        <b>VLX Quality</b>
+        <span>Quality &amp; compliance inspections for manufacturing, supply chain and field operations.</span>
+        <span class="cat">Quality &amp; compliance</span>
+      </a>
+      <a class="prod" href="https://vlx.ai/digital-inspections-software/">
+        <div class="pmark">📦</div>
+        <b>VLX Inventory.ai</b>
+        <span>Asset &amp; inventory verification with authenticated, on-site photo evidence.</span>
+        <span class="cat">Inventory &amp; assets</span>
+      </a>
+    </div>
+    <div class="center" style="margin-top:30px"><a class="btn btn-ghost" href="https://vlx.ai/digital-inspections-software/">See all VLX products →</a></div>
+  </div>
+</section>
+
+<!-- Related · interlinking (kept for internal-link equity) -->
+<section class="section">
   <div class="wrap">
     <div class="center" style="max-width:720px;margin:0 auto">
       <div class="eyebrow">Explore the VLX platform</div>
@@ -589,10 +722,11 @@
       </div>
       <div>
         <b>Product</b>
-        <a href="#included">Features</a>
-        <a href="#services">Inspection types</a>
-        <a href="#job">How it works</a>
+        <a href="#kypit">Verified evidence (KYPiT)</a>
+        <a href="#pillars">Features</a>
+        <a href="#types">Inspection types</a>
         <a href="#pricing">Pricing</a>
+        <a href="#suite">VLX product family</a>
       </div>
       <div>
         <b>VLX</b>
