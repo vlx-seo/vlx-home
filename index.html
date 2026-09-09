@@ -125,12 +125,21 @@
   .card:hover{box-shadow:var(--shadow);border-color:#D8DEE4}
   .card .ico{width:44px;height:44px;border-radius:10px;background:var(--brand-soft);color:var(--brand-darker);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px}
   .card h3{margin-bottom:7px;font-size:18px;color:var(--text)}.card p{color:var(--text-2);font-size:14.5px}
-  /* sub-services */
+  /* sub-services hub — cards projected to future dedicated sub-service pages (roof, wind mit, 4-point…) */
   .svc{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
-  .svc .s{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .svc .s{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;text-decoration:none;color:inherit;transition:border-color .18s,box-shadow .18s,transform .18s}
+  .svc a.s{cursor:pointer}
+  .svc a.s:hover{border-color:var(--brand);box-shadow:var(--shadow);transform:translateY(-2px)}
+  .svc a.s:focus-visible{outline:2px solid var(--brand-darker);outline-offset:2px}
   .svc .s .si{flex:0 0 40px;height:40px;border-radius:10px;background:var(--brand-soft);color:var(--brand-darker);display:flex;align-items:center;justify-content:center;font-size:18px}
-  .svc .s b{font-size:15.5px;color:var(--text);display:block;margin-bottom:2px}
+  .svc .s b{font-size:15.5px;color:var(--text);display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px}
   .svc .s span{font-size:13.5px;color:var(--text-2)}
+  .svc .s .go{display:inline-block;margin-top:9px;font-size:12.5px;font-weight:600;color:var(--brand-darker)}
+  .svc a.s:hover .go{color:var(--brand-dark)}
+  .svc .s .tag{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;border-radius:999px;padding:2px 8px}
+  .svc .s .tag.soon{color:var(--text-3);background:var(--muted);border:1px solid var(--line)}
+  .svc .s.core{border-color:var(--brand-darker);box-shadow:0 8px 24px rgba(198,58,10,.08)}
+  .svc .s.core .tag{color:var(--brand-darker);background:var(--brand-soft);border:1px solid transparent}
   /* job track */
   .track-wrap{margin-top:34px}
   .track{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 12px;scroll-snap-type:x mandatory;cursor:grab}
@@ -507,27 +516,31 @@
   </div>
 </section>
 
-<!-- S6 · CAPABILITIES GRID (inspection types) — Zoho's capabilities grid + 360° view + pricing CTA -->
+<!-- S6 · SUB-SERVICE HUB (inspection types) — Features grid projected to FUTURE dedicated sub-service pages.
+     Cada tarjeta de especialidad es un <a> INERTE por ahora (sin href → no navega, "no lleva a ningun lado").
+     El destino proyectado va en data-href; para publicar la subpagina, cambiar data-href → href y quitar
+     aria-disabled + el tag "Page coming". Keywords secundarias (brief §5.3 / §17.2 / §18.3) optimizadas por
+     tarjeta: roof/wind mitigation/4-point/radon/mold/sewer scope/pool/termite-WDO/new construction + "software". -->
 <section class="section" id="types" style="background:var(--muted)">
   <div class="wrap">
     <div class="center" style="max-width:740px;margin:0 auto">
-      <div class="eyebrow">One platform, every inspection · a 360° view</div>
-      <h2 style="margin-top:10px">One home inspection software for every service you offer</h2>
-      <p class="lead center">Run your full-home inspections and every ancillary service from the same platform — each with its own template, report format and state-required forms. No second tool, no second login.</p>
+      <div class="eyebrow">One platform, every inspection specialty</div>
+      <h2 style="margin-top:10px">Home inspection software for every service you offer</h2>
+      <p class="lead center">Run your full-home inspections and every specialty from one platform — each with its own template, report format and state-required forms. Explore the software behind each inspection type below.</p>
     </div>
     <div class="svc">
-      <div class="s reveal"><div class="si">🏠</div><div><b>Full home inspection</b><span>The standard buyer's home inspection, captured room by room with photos and condition scores.</span></div></div>
-      <div class="s reveal"><div class="si">🌀</div><div><b>Wind mitigation inspection</b><span>Florida wind mitigation inspections on the state form, ready for the insurer.</span></div></div>
-      <div class="s reveal"><div class="si">4️⃣</div><div><b>4-point inspection</b><span>4-point inspections for insurance — roof, electrical, plumbing and HVAC — on the required form.</span></div></div>
-      <div class="s reveal"><div class="si">☢️</div><div><b>Radon testing</b><span>Schedule radon testing alongside the inspection and attach results to the report.</span></div></div>
-      <div class="s reveal"><div class="si">🦠</div><div><b>Mold inspection</b><span>Mold inspections with annotated photo evidence and lab-ready findings.</span></div></div>
-      <div class="s reveal"><div class="si">🏚️</div><div><b>Roof inspection</b><span>Roof inspections with GPS-stamped, annotated photos and a clear condition summary.</span></div></div>
-      <div class="s reveal"><div class="si">🚿</div><div><b>Sewer scope inspection</b><span>Attach a sewer scope inspection and its video findings to the main report.</span></div></div>
-      <div class="s reveal"><div class="si">🏊</div><div><b>Pool &amp; spa inspection</b><span>Offer pool and spa inspections as a priced add-on at booking.</span></div></div>
-      <div class="s reveal"><div class="si">🐜</div><div><b>Termite / WDO</b><span>Coordinate termite and wood-destroying-organism inspections within the same job.</span></div></div>
-      <div class="s reveal"><div class="si">🏗️</div><div><b>New construction &amp; pre-purchase</b><span>New-construction and pre-purchase inspections, from phase checks to final walkthrough.</span></div></div>
+      <div class="s core reveal"><div class="si">🏠</div><div><b>Full home inspection <span class="tag">Core · this page</span></b><span>The standard buyer's home inspection, captured room by room with photos and condition scores — the core of VLX Home.</span></div></div>
+      <a class="s reveal" data-href="/digital-inspections-software/home/roof-inspection-software/" aria-disabled="true"><div class="si">🏚️</div><div><b>Roof inspection <span class="tag soon">Page coming</span></b><span>Roof inspection software with GPS-stamped, annotated photos and a clear condition summary buyers and insurers trust.</span><span class="go">Explore roof inspection software →</span></div></a>
+      <a class="s reveal" data-href="/digital-inspections-software/home/wind-mitigation-inspection-software/" aria-disabled="true"><div class="si">🌀</div><div><b>Wind mitigation inspection <span class="tag soon">Page coming</span></b><span>Wind mitigation inspection software on the Florida state form (OIR-B1-1802), ready for the insurer.</span><span class="go">Explore wind mitigation software →</span></div></a>
+      <a class="s reveal" data-href="/digital-inspections-software/home/4-point-inspection-software/" aria-disabled="true"><div class="si">4️⃣</div><div><b>4-point inspection <span class="tag soon">Page coming</span></b><span>4-point inspection software for insurance — roof, electrical, plumbing and HVAC — on the required Florida form.</span><span class="go">Explore 4-point inspection software →</span></div></a>
+      <a class="s reveal" data-href="/digital-inspections-software/home/radon-inspection-software/" aria-disabled="true"><div class="si">☢️</div><div><b>Radon testing <span class="tag soon">Page coming</span></b><span>Radon inspection software that schedules radon testing alongside the inspection and attaches results to the report.</span><span class="go">Explore radon inspection software →</span></div></a>
+      <a class="s reveal" data-href="/digital-inspections-software/home/mold-inspection-software/" aria-disabled="true"><div class="si">🦠</div><div><b>Mold inspection <span class="tag soon">Page coming</span></b><span>Mold inspection software with annotated photo evidence and lab-ready findings.</span><span class="go">Explore mold inspection software →</span></div></a>
+      <a class="s reveal" data-href="/digital-inspections-software/home/sewer-scope-inspection-software/" aria-disabled="true"><div class="si">🚿</div><div><b>Sewer scope inspection <span class="tag soon">Page coming</span></b><span>Sewer scope inspection software that attaches the scope video and its findings to the main report.</span><span class="go">Explore sewer scope software →</span></div></a>
+      <a class="s reveal" data-href="/digital-inspections-software/home/pool-inspection-software/" aria-disabled="true"><div class="si">🏊</div><div><b>Pool &amp; spa inspection <span class="tag soon">Page coming</span></b><span>Pool and spa inspection software you can offer as a priced add-on at booking.</span><span class="go">Explore pool inspection software →</span></div></a>
+      <a class="s reveal" data-href="/digital-inspections-software/home/termite-wdo-inspection-software/" aria-disabled="true"><div class="si">🐜</div><div><b>Termite / WDO inspection <span class="tag soon">Page coming</span></b><span>Termite and wood-destroying-organism (WDO) inspection software, coordinated within the same job.</span><span class="go">Explore termite / WDO software →</span></div></a>
+      <a class="s reveal" data-href="/digital-inspections-software/home/new-construction-inspection-software/" aria-disabled="true"><div class="si">🏗️</div><div><b>New construction &amp; pre-purchase <span class="tag soon">Page coming</span></b><span>New-construction and pre-purchase inspection software, from phase checks to the final walkthrough.</span><span class="go">Explore new construction software →</span></div></a>
     </div>
-    <p class="lead center" style="margin:26px auto 0;font-size:15px;color:var(--text-3)">Each inspection type carries its own pricing, add-ons and report format — so clients book the right service and you deliver the right form every time. Everything a home inspection business needs, in one 360° view.</p>
+    <p class="lead center" style="margin:26px auto 0;font-size:15px;color:var(--text-3)">Each specialty carries its own pricing, add-ons and report format — so clients book the right service and you deliver the right form every time. Dedicated pages for each inspection type are on the way.</p>
     <div class="center" style="margin-top:26px"><a class="btn btn-primary" href="#pricing">See pricing →</a></div>
   </div>
 </section>
