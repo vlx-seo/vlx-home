@@ -27,7 +27,7 @@
     --shadow:0 1px 2px rgba(38,50,56,.05),0 6px 18px rgba(38,50,56,.05);
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:150px}
+  html{scroll-behavior:smooth;scroll-padding-top:90px}
   body{margin:0;font-family:'Rubik','Rubik Fallback',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);background:var(--surface);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:17px}
   a{color:var(--brand-darker)}
   img{max-width:100%}
@@ -52,10 +52,10 @@
   .anno{background:var(--darker);color:#CBD5E1;font-size:13px;text-align:center;padding:9px 12px}
   .anno .new{background:var(--brand);color:#fff;font-size:11px;font-weight:600;padding:2px 9px;border-radius:999px;margin-right:10px;letter-spacing:.03em}
   .anno b{color:#fff}
-  /* both bars stick together so the global vlx header never scrolls away */
-  .headers{position:sticky;top:0;z-index:60}
-  header{position:relative;z-index:50;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 4px 14px -6px rgba(38,50,56,.12)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  /* product sub-header stays sticky; the global vlx bar above it scrolls away (as before) */
+  /* dark bar integrated with the service hero (same --dark); the soft shadow only shows once it sits over light content */
+  header{position:sticky;top:0;z-index:50;background:var(--dark);box-shadow:0 10px 28px -16px rgba(0,0,0,.55)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;position:relative}
   .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
   .logo .mark{width:38px;height:26px}
   .logo img.mark{width:auto;height:26px}
@@ -66,9 +66,24 @@
   .nav-links a{font-size:15px;color:var(--text);font-weight:500;text-decoration:none}
   .nav-links a:hover{color:var(--brand-darker)}
   .nav-cta{display:flex;gap:12px;align-items:center}
+  /* product sub-header on dark — light text so it reads on the --dark bar */
+  .product-bar .wm b{color:#fff}
+  .product-bar .wm span{color:#8FA0AC}
+  .product-bar .nav-links a{color:#CBD5E1}
+  .product-bar .nav-links a:hover{color:var(--brand-light)}
+  .product-bar .nav-drop-t .caret{color:#8FA0AC}
+  .pnav{display:flex;align-items:center;gap:26px}
+  .pburger{display:none;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid rgba(255,255,255,.28);border-radius:8px;background:transparent;color:#fff;cursor:pointer}
+  .pburger:hover{border-color:rgba(255,255,255,.55)}
+  .pburger:focus-visible{outline:2px solid var(--brand-light);outline-offset:2px}
+  .pburger .bars{width:20px;height:14px;position:relative}
+  .pburger .bars i{position:absolute;left:0;right:0;height:2px;background:currentColor;border-radius:2px;transition:.2s}
+  .pburger .bars i:nth-child(1){top:0}.pburger .bars i:nth-child(2){top:6px}.pburger .bars i:nth-child(3){top:12px}
+  .pburger[aria-expanded="true"] .bars i:nth-child(1){top:6px;transform:rotate(45deg)}
+  .pburger[aria-expanded="true"] .bars i:nth-child(2){opacity:0}
+  .pburger[aria-expanded="true"] .bars i:nth-child(3){top:6px;transform:rotate(-45deg)}
   /* GLOBAL VLX site header (mirrors vlx.ai) — sits above the product sub-header, like Zoho.com over Zoho CRM */
-  /* parent-site bar sits on a subtle gray so it reads as a distinct layer under the white product bar (separation before any scroll) */
-  .site-header{background:#F1F5F9;border-bottom:1px solid var(--line)}
+  .site-header{background:#fff;border-bottom:1px solid var(--line)}
   .site-nav{display:flex;align-items:center;height:58px;gap:24px}
   .slogo{display:flex;align-items:center;gap:8px;text-decoration:none}
   .slogo img{height:38px;width:auto;display:block}
@@ -77,24 +92,6 @@
   .site-links a{font-size:14.5px;color:var(--text);font-weight:500;text-decoration:none}
   .site-links a:hover{color:var(--brand-darker)}
   .site-cta{display:flex;gap:16px;align-items:center;margin-left:auto}
-  /* global VLX menu collapsed into a hamburger — keeps vlx.ai reachable and stops it competing with the product nav */
-  .site-right{margin-left:auto;display:flex;align-items:center;gap:16px}
-  .site-menu-wrap{position:relative;display:flex}
-  .hamb{display:inline-flex;align-items:center;gap:9px;height:38px;padding:0 14px;background:transparent;border:1px solid var(--line);border-radius:8px;cursor:pointer;color:var(--text);font:inherit}
-  .hamb:hover{border-color:var(--text-2)}
-  .hamb:focus-visible{outline:2px solid var(--brand-darker);outline-offset:2px}
-  .hamb .bars{width:18px;height:14px;position:relative;flex:0 0 auto}
-  .hamb .bars i{position:absolute;left:0;right:0;height:2px;background:currentColor;border-radius:2px;transition:.2s}
-  .hamb .bars i:nth-child(1){top:0}.hamb .bars i:nth-child(2){top:6px}.hamb .bars i:nth-child(3){top:12px}
-  .hamb[aria-expanded="true"] .bars i:nth-child(1){top:6px;transform:rotate(45deg)}
-  .hamb[aria-expanded="true"] .bars i:nth-child(2){opacity:0}
-  .hamb[aria-expanded="true"] .bars i:nth-child(3){top:6px;transform:rotate(-45deg)}
-  .hamb .hlabel{font-size:14.5px;font-weight:500}
-  .site-menu{position:absolute;top:calc(100% + 10px);right:0;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:8px;min-width:236px;z-index:70;display:flex;flex-direction:column}
-  .site-menu a{display:block;padding:10px 12px;border-radius:8px;font-size:14.5px;color:var(--text);text-decoration:none;font-weight:500}
-  .site-menu a:hover{background:var(--brand-soft);color:var(--brand-darker)}
-  .site-menu .site-menu-home{color:var(--brand-darker);font-weight:600}
-  .site-menu .site-menu-div{height:1px;background:var(--line);margin:6px 4px}
   .slink{font-size:14.5px;color:var(--text);font-weight:500;text-decoration:none}
   .slink:hover{color:var(--brand-darker)}
   .btn-sm{padding:9px 20px;font-size:14.5px}
@@ -330,58 +327,64 @@
   .prod .cat{display:block;margin-top:14px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--brand-darker)}
   @media(max-width:920px){
     .wrap{padding:0 24px}
-    .nav-links,.site-links{display:none}
+    .site-links{display:none}
+    /* product sub-header collapses into a hamburger-driven panel */
+    .pburger{display:inline-flex;margin-left:auto}
+    .pnav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--darker);border-top:1px solid rgba(255,255,255,.08);box-shadow:0 22px 34px -16px rgba(0,0,0,.6);padding:8px 24px 18px}
+    .pnav.open{display:flex}
+    .nav-links{flex-direction:column;align-items:stretch;gap:0;width:100%}
+    .product-bar .nav-links a{padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.07);font-size:16px}
+    .nav-drop{display:block}
+    .nav-drop::after{display:none}
+    .nav-drop-t{justify-content:space-between}
+    .nav-menu{display:none!important}
+    .nav-cta{flex-direction:column;align-items:stretch;gap:10px;margin-top:16px;width:100%}
+    .nav-cta .btn{width:100%;justify-content:center}
     .hero-grid,.wipe-grid,.price-grid,.spotlight{grid-template-columns:1fr}
     .g2,.g3,.g4,.stats,.integ,.svc,.related,.blog-grid,.roles,.pillars,.suite{grid-template-columns:1fr 1fr}
     .spotlight{padding:34px 26px}
     .section{padding:56px 0}.report,.report-img{transform:none;margin-top:26px}
     footer .cols{grid-template-columns:1fr 1fr}
   }
-  @media(max-width:560px){.g2,.g3,.g4,.stats,.integ,.svc,.related,.blog-grid,.roles,.pillars,.suite{grid-template-columns:1fr}.nav-cta .btn-ghost{display:none}.hamb{padding:0 10px}.hamb .hlabel,.site-header .slink{display:none}}
+  @media(max-width:560px){.g2,.g3,.g4,.stats,.integ,.svc,.related,.blog-grid,.roles,.pillars,.suite{grid-template-columns:1fr}.site-header .slink{display:none}}
 </style>
 </head>
 <body>
 
 <div class="anno"><span class="new">PROPOSAL v4</span> VLX Home reordered to the <b>Zoho product-page structure</b> · one product in the VLX suite · noindex</div>
 
-<!-- Both bars wrapped in one sticky container so neither scrolls away -->
-<div class="headers">
-<!-- GLOBAL VLX site header (whole-site nav, mirrors vlx.ai) -->
+<!-- GLOBAL VLX site header (whole-site nav, mirrors vlx.ai) — scrolls away; the dark product bar below stays -->
 <div class="site-header">
   <div class="wrap site-nav">
     <a class="slogo" href="https://vlx.ai/" aria-label="VLX home">
       <img src="logos/vlx-logo.png" width="300" height="88" alt="VLX" />
     </a>
-    <div class="site-right">
-      <div class="site-menu-wrap">
-        <button type="button" class="hamb" id="siteHamb" aria-label="Open the VLX menu" aria-expanded="false" aria-controls="siteMenu">
-          <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="hlabel">Menu</span>
-        </button>
-        <nav class="site-menu" id="siteMenu" aria-label="VLX main menu" hidden>
-          <a class="site-menu-home" href="https://vlx.ai/">← Back to vlx.ai home</a>
-          <span class="site-menu-div" aria-hidden="true"></span>
-          <a href="https://vlx.ai/product/">Product</a>
-          <a href="https://vlx.ai/digital-inspections-software/">Solutions</a>
-          <a href="https://vlx.ai/integrations/">Integrations</a>
-          <a href="https://vlx.ai/pricing/">Pricing</a>
-          <a href="https://vlx.ai/resources/">Resources</a>
-          <a href="https://vlx.ai/about-us/">Company</a>
-        </nav>
-      </div>
+    <nav class="site-links">
+      <a href="https://vlx.ai/product/">Product</a>
+      <a href="https://vlx.ai/digital-inspections-software/">Solutions</a>
+      <a href="https://vlx.ai/integrations/">Integrations</a>
+      <a href="https://vlx.ai/pricing/">Pricing</a>
+      <a href="https://vlx.ai/resources/">Resources</a>
+      <a href="https://vlx.ai/about-us/">Company</a>
+    </nav>
+    <div class="site-cta">
       <a class="slink" href="https://app.vlx.ai/Login/">Login</a>
       <a class="btn btn-primary btn-sm" href="https://app.vlx.ai/login/?plan=ProfessionalTrial">Get Started</a>
     </div>
   </div>
 </div>
 
-<!-- PRODUCT sub-header = the VLX Home bar (sticky, like Zoho CRM's own header under Zoho.com) -->
-<header class="product-bar">
+<!-- PRODUCT sub-header = the VLX Home bar — dark, integrated with the service hero; sticky + mobile hamburger -->
+<header class="product-bar on-dark">
   <div class="wrap nav">
     <a class="logo" href="#" aria-label="VLX Home">
       <img class="mark" src="logos/vlx-mark.png" width="133" height="75" alt="" aria-hidden="true" />
       <span class="wm"><b>vlx&nbsp;<em>Home</em></b><span>HOME INSPECTION SOFTWARE</span></span>
     </a>
+    <button type="button" class="pburger" id="pBurger" aria-label="Open the VLX Home menu" aria-expanded="false" aria-controls="pnav">
+      <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+    <div class="pnav" id="pnav">
     <nav class="nav-links">
       <a href="#kypit">Verified evidence</a>
       <a href="#pillars">Features</a>
@@ -407,9 +410,9 @@
       <a class="btn btn-ghost" href="https://vlx.ai/demo/">Book a Demo</a>
       <a class="btn btn-primary" href="https://app.visualogyx.com/login/?plan=ProfessionalTrial">Start Free Trial</a>
     </div>
+    </div><!-- /.pnav -->
   </div>
 </header>
-</div><!-- /.headers -->
 
 <!-- S1 · HERO (dark) -->
 <section class="hero on-dark">
@@ -871,13 +874,15 @@
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // Global VLX menu — collapsed to a hamburger so it never competes with the product nav; always a way back to vlx.ai
-  const hamb=document.getElementById('siteHamb'),siteMenu=document.getElementById('siteMenu');
-  if(hamb&&siteMenu){
-    const setOpen=o=>{hamb.setAttribute('aria-expanded',o?'true':'false');siteMenu.hidden=!o;};
-    hamb.addEventListener('click',e=>{e.stopPropagation();setOpen(siteMenu.hidden);});
-    document.addEventListener('click',e=>{if(!siteMenu.hidden&&!hamb.contains(e.target)&&!siteMenu.contains(e.target))setOpen(false);});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!siteMenu.hidden){setOpen(false);hamb.focus();}});
+  // Product sub-header — hamburger-driven nav on mobile (the dark bar's links + CTAs collapse into a panel)
+  const pB=document.getElementById('pBurger'),pnav=document.getElementById('pnav');
+  if(pB&&pnav){
+    const setP=o=>{pB.setAttribute('aria-expanded',o?'true':'false');pnav.classList.toggle('open',o);};
+    pB.addEventListener('click',e=>{e.stopPropagation();setP(!pnav.classList.contains('open'));});
+    pnav.addEventListener('click',e=>{if(e.target.closest('a'))setP(false);});                 // tapping a link closes the panel
+    document.addEventListener('click',e=>{if(pnav.classList.contains('open')&&!pnav.contains(e.target)&&!pB.contains(e.target))setP(false);});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&pnav.classList.contains('open')){setP(false);pB.focus();}});
+    addEventListener('resize',()=>{if(innerWidth>920&&pnav.classList.contains('open'))setP(false);}); // reset if grown to desktop
   }
   const track=document.getElementById('jobTrack');
   const vp=document.getElementById('jobViewport');
