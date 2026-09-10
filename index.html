@@ -27,7 +27,7 @@
     --shadow:0 1px 2px rgba(38,50,56,.05),0 6px 18px rgba(38,50,56,.05);
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-padding-top:150px}
   body{margin:0;font-family:'Rubik','Rubik Fallback',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);background:var(--surface);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:17px}
   a{color:var(--brand-darker)}
   img{max-width:100%}
@@ -52,7 +52,9 @@
   .anno{background:var(--darker);color:#CBD5E1;font-size:13px;text-align:center;padding:9px 12px}
   .anno .new{background:var(--brand);color:#fff;font-size:11px;font-weight:600;padding:2px 9px;border-radius:999px;margin-right:10px;letter-spacing:.03em}
   .anno b{color:#fff}
-  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 4px 14px -6px rgba(38,50,56,.12)}
+  /* both bars stick together so the global vlx header never scrolls away */
+  .headers{position:sticky;top:0;z-index:60}
+  header{position:relative;z-index:50;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 4px 14px -6px rgba(38,50,56,.12)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
   .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
   .logo .mark{width:38px;height:26px}
@@ -342,6 +344,8 @@
 
 <div class="anno"><span class="new">PROPOSAL v4</span> VLX Home reordered to the <b>Zoho product-page structure</b> · one product in the VLX suite · noindex</div>
 
+<!-- Both bars wrapped in one sticky container so neither scrolls away -->
+<div class="headers">
 <!-- GLOBAL VLX site header (whole-site nav, mirrors vlx.ai) -->
 <div class="site-header">
   <div class="wrap site-nav">
@@ -405,6 +409,7 @@
     </div>
   </div>
 </header>
+</div><!-- /.headers -->
 
 <!-- S1 · HERO (dark) -->
 <section class="hero on-dark">
